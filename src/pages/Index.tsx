@@ -6,34 +6,18 @@ const HERO_IMAGE = "https://cdn.poehali.dev/projects/d8ffcc0f-4381-4b97-b3bb-496
 const services = [
   {
     icon: "Heart",
-    title: "Индивидуальная терапия",
-    desc: "Личное пространство для глубокой работы с тревогой, страхами и внутренними конфликтами. Без осуждения.",
-    price: "от 3 500 ₽",
-    duration: "60 минут",
-    tag: "sage",
-  },
-  {
-    icon: "Users",
-    title: "Работа с отношениями",
-    desc: "Восстановление доверия к себе и близким. Работа с границами, привязанностью и паттернами поведения.",
-    price: "от 3 500 ₽",
-    duration: "60 минут",
-    tag: "rose",
-  },
-  {
-    icon: "Leaf",
-    title: "Работа с потерями",
-    desc: "Поддержка в периоды горя, расставаний и жизненных перемен. Бережное сопровождение через кризис.",
-    price: "от 3 500 ₽",
-    duration: "60 минут",
+    title: "Базовый",
+    desc: "Для тех, кто хочет начать возвращаться к себе. Начинаешь слышать себя, снижается тревожность, становится легче внутри, появляются первые изменения.",
+    price: "2 месяца",
+    duration: "8 встреч",
     tag: "sage",
   },
   {
     icon: "Sparkles",
-    title: "Онлайн-консультации",
-    desc: "Та же глубина работы — в удобном для вас формате, из любой точки мира.",
-    price: "от 3 000 ₽",
-    duration: "60 минут",
+    title: "VIP",
+    desc: "Глубокий формат, где меняется не только состояние, а вся жизнь. Перестаёшь предавать себя, спокойно говоришь «нет», появляется устойчивая опора на себя.",
+    price: "3 месяца",
+    duration: "12 встреч",
     tag: "rose",
   },
 ];
@@ -41,50 +25,52 @@ const services = [
 const steps = [
   {
     num: "01",
-    title: "Первый контакт",
-    desc: "Напишите мне — коротко, что сейчас происходит. Мы договоримся о времени первой встречи.",
+    title: "Реальные ситуации",
+    desc: "Работаем с моментами, где ты теряешь себя — в конкретных жизненных ситуациях, а не в теории.",
   },
   {
     num: "02",
-    title: "Знакомство",
-    desc: "На первой сессии мы просто разговариваем. Никаких заданий — только пространство, чтобы быть услышанным.",
+    title: "Твои реакции",
+    desc: "Разбираем твои выборы и реакции — почему ты снова выбрала не себя и как это менять.",
   },
   {
     num: "03",
-    title: "Совместная работа",
-    desc: "Выстраиваем маршрут вместе: темп, частота встреч, глубина погружения — всё подбирается под вас.",
+    title: "Чувства внутри",
+    desc: "Работаем с чувствами, которые ты привыкла подавлять: вина, страх, усталость, злость.",
   },
   {
     num: "04",
-    title: "Изменения",
-    desc: "Постепенно жизнь становится более понятной. Вы начинаете доверять себе и своим решениям.",
+    title: "Жизнь из себя",
+    desc: "Постепенно ты начинаешь жить не из «надо», а исходя из себя и своих желаний.",
   },
 ];
 
 const results = [
-  "Выход из тревожных петель",
-  "Здоровые границы в отношениях",
-  "Доверие к себе и своим чувствам",
-  "Меньше самокритики",
-  "Ясность в жизненных решениях",
-  "Опора в трудных моментах",
+  "Слышишь себя и понимаешь, чего хочешь",
+  "Замечаешь, где предаёшь себя",
+  "Выбираешь себя без страха",
+  "Спокойно говоришь «нет» без вины",
+  "Перестаёшь тащить всё на себе",
+  "Спокойствие становится твоим состоянием",
+  "Появляется опора на себя",
+  "Возвращается энергия и настоящие желания",
 ];
 
 const reviews = [
   {
-    name: "Анна К.",
-    text: "Наконец-то нашла место, где можно говорить честно. После полугода работы я буквально стала другим человеком — более спокойным и уверенным.",
-    sessions: "8 месяцев",
+    name: "Марина",
+    text: "Я всю жизнь жила через «должна». После работы с Ириной я впервые сказала «нет» — и не умерла от вины. Это было что-то невероятное.",
+    sessions: "Базовый",
   },
   {
-    name: "Михаил Р.",
-    text: "Скептически относился к терапии, но друг настоял. Теперь понимаю — это было лучшее решение. Научился понимать свои реакции.",
-    sessions: "5 месяцев",
+    name: "Татьяна",
+    text: "Я думала, что просто устала. Оказалось, я годами предавала себя. Сейчас я наконец-то чувствую, что живу своей жизнью.",
+    sessions: "VIP",
   },
   {
-    name: "Елена С.",
-    text: "Тёплая, внимательная, профессиональная. Ни разу не почувствовала себя странной или непонятой. Это редкость.",
-    sessions: "1 год",
+    name: "Ольга",
+    text: "Ирина помогла мне увидеть, где я теряю себя. Постепенно всё начало меняться — в отношениях, в работе, в себе.",
+    sessions: "VIP",
   },
 ];
 
@@ -120,9 +106,9 @@ export default function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: "О психологе", href: "#about" },
-    { label: "Услуги", href: "#services" },
-    { label: "Процесс", href: "#process" },
+    { label: "Для кого", href: "#about" },
+    { label: "Форматы", href: "#services" },
+    { label: "Как проходит", href: "#process" },
     { label: "Результаты", href: "#results" },
     { label: "Отзывы", href: "#reviews" },
   ];
@@ -144,7 +130,7 @@ export default function Index() {
           className="font-light tracking-wide"
           style={{ fontFamily: "'Cormorant', serif", fontSize: "1.3rem", color: "hsl(var(--warm-dark))" }}
         >
-          Анна Светлова
+          Ирина Плотникова
           <span className="ml-2 text-sm" style={{ color: "hsl(var(--rose))", fontFamily: "'Golos Text', sans-serif" }}>
             психолог
           </span>
@@ -230,7 +216,7 @@ export default function Index() {
               className="inline-flex items-center gap-2 mb-8"
               style={{ animation: "fadeUp 0.6s ease 0.1s both" }}
             >
-              <span className="tag-sage">Психологическое консультирование</span>
+              <span className="tag-sage">Индивидуальное сопровождение</span>
             </div>
 
             <h1
@@ -244,9 +230,9 @@ export default function Index() {
                 animation: "fadeUp 0.7s ease 0.2s both",
               }}
             >
-              Безопасное<br />
-              <em style={{ fontStyle: "italic", color: "hsl(var(--rose-dark))" }}>пространство</em>
-              <br />для изменений
+              Перестать предавать<br />
+              <em style={{ fontStyle: "italic", color: "hsl(var(--rose-dark))" }}>себя</em>
+              <br />и снова выбирать себя
             </h1>
 
             <p
@@ -256,11 +242,10 @@ export default function Index() {
                 color: "hsl(var(--muted-foreground))",
                 fontWeight: 300,
                 animation: "fadeUp 0.7s ease 0.35s both",
-                maxWidth: "420px",
+                maxWidth: "440px",
               }}
             >
-              Помогаю разобраться в себе, выйти из тревоги и построить жизнь, которая ощущается как своя.
-              Работаю онлайн и в Москве.
+              Для женщин, которые привыкли тянуть всё на себе и потеряли себя в отношениях — без вины и страха.
             </p>
 
             <div
@@ -268,10 +253,10 @@ export default function Index() {
               style={{ animation: "fadeUp 0.7s ease 0.5s both" }}
             >
               <button onClick={() => scrollTo("#contact")} className="btn-primary">
-                Записаться на консультацию
+                Хочу начать
               </button>
               <button onClick={() => scrollTo("#about")} className="btn-outline">
-                Узнать больше
+                Узнать подробнее
               </button>
             </div>
 
@@ -279,12 +264,12 @@ export default function Index() {
               className="flex gap-8 mt-12"
               style={{ animation: "fadeUp 0.7s ease 0.65s both" }}
             >
-              {[["8+", "лет практики"], ["300+", "клиентов"], ["97%", "рекомендуют"]].map(([n, l]) => (
+              {[["с 2023", "в психологии"], ["2024", "окончила университет"], ["100%", "индивидуально"]].map(([n, l]) => (
                 <div key={n}>
                   <div
                     style={{
                       fontFamily: "'Cormorant', serif",
-                      fontSize: "2rem",
+                      fontSize: "1.7rem",
                       fontWeight: 500,
                       color: "hsl(var(--rose-dark))",
                       lineHeight: 1,
@@ -308,29 +293,29 @@ export default function Index() {
           <AnimatedSection>
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div>
-                <div className="tag-rose mb-6">О психологе</div>
+                <div className="tag-rose mb-6">Это для тебя, если</div>
                 <h2 className="section-title mb-6">
-                  Анна Светлова —<br />
-                  <em style={{ fontStyle: "italic" }}>ваш проводник</em>
+                  Ты узнаёшь<br />
+                  <em style={{ fontStyle: "italic" }}>себя здесь?</em>
                 </h2>
                 <p className="section-subtitle mb-5">
-                  Клинический психолог с 8-летним опытом. Специализируюсь на тревожных расстройствах,
-                  кризисах идентичности и работе с отношениями.
+                  Ты не понимаешь, как из этого выйти, поэтому продолжаешь жить так, как не хочешь. И уже не первый год.
                 </p>
                 <p
                   className="leading-relaxed mb-8"
                   style={{ color: "hsl(var(--muted-foreground))", fontWeight: 300 }}
                 >
-                  Верю, что каждый человек несёт в себе ресурс для изменений. Моя задача —
-                  создать достаточно безопасное пространство, чтобы этот ресурс проявился.
-                  Работаю в интегративном подходе: КПТ, схема-терапия, элементы психодинамики.
+                  Внутри одновременно живут два голоса: «Я хочу жить для себя» и «Я не имею права подвести других». 
+                  Ты уже пробовала разбираться, читать, терпеть и держаться. Но это не работает, 
+                  потому что ты продолжаешь жить через напряжение, страх и «надо».
                 </p>
 
                 <div className="flex flex-col gap-3">
                   {[
-                    "Член Российского психологического общества",
-                    "Сертификат КПТ — институт Бека (США)",
-                    "Регулярная супервизия и личная терапия",
+                    "Живёшь с постоянным ощущением «я должна»",
+                    "Не умеешь говорить «нет», потом накрывает вина",
+                    "Подстраиваешься, чтобы не разрушить отношения",
+                    "Живёшь ради других, откладывая себя",
                   ].map((item) => (
                     <div key={item} className="flex items-start gap-3">
                       <div
@@ -375,10 +360,10 @@ export default function Index() {
                         lineHeight: 1.5,
                       }}
                     >
-                      «Терапия — это не про слабость. Это про смелость встретить себя.»
+                      «Я сама прошла этот путь и знаю, как это — жить не своей жизнью.»
                     </div>
                     <div className="mt-2 text-xs" style={{ color: "hsl(var(--muted-foreground))" }}>
-                      — Анна Светлова
+                      — Ирина Плотникова
                     </div>
                   </div>
                 </div>
@@ -396,10 +381,10 @@ export default function Index() {
       >
         <div className="container mx-auto px-6 md:px-12 max-w-6xl">
           <AnimatedSection className="text-center mb-16">
-            <div className="tag-sage mx-auto mb-6" style={{ display: "inline-flex" }}>Услуги</div>
-            <h2 className="section-title">С чем я работаю</h2>
+            <div className="tag-sage mx-auto mb-6" style={{ display: "inline-flex" }}>Форматы сопровождения</div>
+            <h2 className="section-title">Выбери свой путь</h2>
             <p className="section-subtitle mt-4 max-w-lg mx-auto">
-              Каждый запрос индивидуален. Вот основные направления работы.
+              Это индивидуальная работа со мной, в которой ты начинаешь выбирать себя в жизни.
             </p>
           </AnimatedSection>
 
@@ -437,19 +422,26 @@ export default function Index() {
                     {s.desc}
                   </p>
                   <div className="flex items-center justify-between pt-4" style={{ borderTop: "1px solid hsl(var(--border))" }}>
-                    <span
-                      style={{
-                        fontFamily: "'Cormorant', serif",
-                        fontSize: "1.3rem",
-                        fontWeight: 500,
-                        color: "hsl(var(--warm-dark))",
-                      }}
+                    <div>
+                      <div className="text-xs mb-0.5" style={{ color: "hsl(var(--muted-foreground))" }}>длительность</div>
+                      <span
+                        style={{
+                          fontFamily: "'Cormorant', serif",
+                          fontSize: "1.3rem",
+                          fontWeight: 500,
+                          color: "hsl(var(--warm-dark))",
+                        }}
+                      >
+                        {s.price}
+                      </span>
+                    </div>
+                    <button
+                      onClick={() => scrollTo("#contact")}
+                      className={s.tag === "rose" ? "btn-primary" : "btn-outline"}
+                      style={{ padding: "0.5rem 1.25rem", fontSize: "0.8rem" }}
                     >
-                      {s.price}
-                    </span>
-                    <span className={`tag-${s.tag}`} style={{ fontSize: "0.75rem" }}>
-                      {s.duration}
-                    </span>
+                      {s.tag === "rose" ? "Пойти в работу" : "Записаться"}
+                    </button>
                   </div>
                 </div>
               </AnimatedSection>
@@ -462,10 +454,10 @@ export default function Index() {
       <section id="process" className="py-24 md:py-32">
         <div className="container mx-auto px-6 md:px-12 max-w-6xl">
           <AnimatedSection className="text-center mb-16">
-            <div className="tag-rose mx-auto mb-6" style={{ display: "inline-flex" }}>Процесс работы</div>
-            <h2 className="section-title">Как это происходит</h2>
+            <div className="tag-rose mx-auto mb-6" style={{ display: "inline-flex" }}>Как проходит работа</div>
+            <h2 className="section-title">Мы работаем через</h2>
             <p className="section-subtitle mt-4 max-w-lg mx-auto">
-              Первый шаг всегда самый трудный. Я постараюсь сделать его максимально простым.
+              Еженедельные встречи, разбор реальных ситуаций и поддержка между встречами.
             </p>
           </AnimatedSection>
 
@@ -520,18 +512,17 @@ export default function Index() {
             <AnimatedSection>
               <div className="tag-sage mb-6">Результаты</div>
               <h2 className="section-title mb-6">
-                Что меняется<br />
-                <em style={{ fontStyle: "italic" }}>после работы</em>
+                В процессе работы<br />
+                <em style={{ fontStyle: "italic" }}>ты начинаешь</em>
               </h2>
               <p className="section-subtitle mb-10">
-                Результаты терапии не мгновенны, но они реальны.
-                Вот что чаще всего отмечают клиенты.
+                Меняется не только состояние — меняется то, как ты живёшь.
               </p>
               <button
                 onClick={() => scrollTo("#contact")}
                 className="btn-primary"
               >
-                Начать свой путь
+                Хочу на сопровождение
               </button>
             </AnimatedSection>
 
@@ -575,9 +566,9 @@ export default function Index() {
         <div className="container mx-auto px-6 md:px-12 max-w-6xl">
           <AnimatedSection className="text-center mb-16">
             <div className="tag-rose mx-auto mb-6" style={{ display: "inline-flex" }}>Отзывы</div>
-            <h2 className="section-title">Истории клиентов</h2>
+            <h2 className="section-title">Они уже выбрали себя</h2>
             <p className="section-subtitle mt-4">
-              Имена изменены с согласия клиентов
+              Имена изменены с согласия клиенток
             </p>
           </AnimatedSection>
 
@@ -629,21 +620,24 @@ export default function Index() {
         <div className="container mx-auto px-6 md:px-12 max-w-6xl">
           <div className="grid md:grid-cols-2 gap-16 items-start">
             <AnimatedSection>
-              <div className="tag-rose mb-6">Запись и контакты</div>
+              <div className="tag-rose mb-6">Начать работу</div>
               <h2 className="section-title mb-6">
-                Сделайте первый<br />
-                <em style={{ fontStyle: "italic" }}>шаг сегодня</em>
+                Если внутри есть:<br />
+                <em style={{ fontStyle: "italic" }}>«Я больше не могу так с собой»</em>
               </h2>
-              <p className="section-subtitle mb-10">
-                Напишите, что вас беспокоит — и мы найдём удобное время для первой встречи.
+              <p className="section-subtitle mb-6">
+                Значит ты уже в точке, где можно начать. Тебе не нужно заставлять себя и резко менять жизнь.
+              </p>
+              <p className="leading-relaxed mb-10" style={{ color: "hsl(var(--muted-foreground))", fontWeight: 300 }}>
+                Можно постепенно возвращаться к себе, жить своей жизнью и не предавать себя.
               </p>
 
               <div className="flex flex-col gap-5">
                 {[
                   { icon: "Phone", label: "Телефон", value: "+7 (999) 000-00-00" },
-                  { icon: "Mail", label: "Email", value: "anna@example.com" },
-                  { icon: "MapPin", label: "Адрес", value: "Москва, метро Чистые пруды" },
-                  { icon: "Clock", label: "Режим работы", value: "Пн–Пт: 10:00–20:00, Сб: 11:00–17:00" },
+                  { icon: "Send", label: "Telegram", value: "@irina_plotnikova" },
+                  { icon: "Globe", label: "Формат", value: "Онлайн, по всему миру" },
+                  { icon: "Clock", label: "Ответ", value: "В течение 24 часов" },
                 ].map((c) => (
                   <div key={c.label} className="flex items-center gap-4">
                     <div
@@ -695,7 +689,7 @@ export default function Index() {
                       color: "hsl(var(--warm-dark))",
                     }}
                   >
-                    Оставьте заявку
+                    Хочу на сопровождение
                   </h3>
                   <div className="flex flex-col gap-4">
                     <div>
@@ -709,7 +703,7 @@ export default function Index() {
                         type="text"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        placeholder="Ваше имя"
+                        placeholder="Твоё имя"
                         className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all duration-200"
                         style={{
                           background: "hsl(var(--cream))",
@@ -754,7 +748,7 @@ export default function Index() {
                       <textarea
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        placeholder="Опишите коротко, что вас беспокоит..."
+                        placeholder="Опиши коротко, что сейчас происходит..."
                         rows={4}
                         className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all duration-200 resize-none"
                         style={{
@@ -774,10 +768,10 @@ export default function Index() {
                       className="btn-primary w-full mt-2"
                       style={{ padding: "0.875rem", fontSize: "0.9rem" }}
                     >
-                      Записаться на консультацию
+                      Хочу на сопровождение
                     </button>
                     <p className="text-center text-xs mt-1" style={{ color: "hsl(var(--muted-foreground))" }}>
-                      Отвечаю в течение 24 часов
+                      Отвечу в течение 24 часов
                     </p>
                   </div>
                 </div>
@@ -797,7 +791,7 @@ export default function Index() {
               color: "hsl(var(--warm-dark))",
             }}
           >
-            Анна Светлова · Психолог
+            Ирина Плотникова · Психолог
           </div>
           <div className="flex flex-wrap gap-6">
             {navLinks.map((l) => (
