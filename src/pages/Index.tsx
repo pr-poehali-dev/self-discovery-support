@@ -329,7 +329,7 @@ export default function Index() {
                     src="https://cdn.poehali.dev/projects/d8ffcc0f-4381-4b97-b3bb-4962f16afd4d/bucket/e30d6b64-1193-45a7-a8c0-7939a6ab6804.jpg"
                     alt="Ирина Плотникова"
                     className="w-full h-full object-cover"
-                    style={{ objectPosition: "center 8%" }}
+                    style={{ objectPosition: "center 0%" }}
                   />
                 </div>
                 <div
