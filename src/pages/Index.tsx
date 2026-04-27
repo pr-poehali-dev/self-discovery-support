@@ -188,7 +188,7 @@ export default function Index() {
       <section
         id="hero"
         className="relative min-h-screen flex items-center overflow-hidden"
-        style={{ paddingTop: "80px" }}
+        style={{ paddingTop: "80px", background: "hsl(38 40% 94%)" }}
       >
         <div
           className="absolute top-20 right-0 w-[40vw] h-[80vh] rounded-l-[80px] overflow-hidden hidden md:block"
@@ -276,7 +276,7 @@ export default function Index() {
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="py-24 md:py-32">
+      <section id="about" className="py-24 md:py-32" style={{ background: "hsl(38 40% 94%)" }}>
         <div className="container mx-auto px-6 md:px-12 max-w-6xl">
           <AnimatedSection>
             <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -333,8 +333,8 @@ export default function Index() {
                   />
                 </div>
                 <div
-                  className="mt-4 rounded-2xl p-5"
-                  style={{ background: "hsl(var(--rose-light))" }}
+                  className="rounded-2xl p-5"
+                  style={{ background: "hsl(var(--rose-light))", marginTop: "-18px", position: "relative", zIndex: 1 }}
                 >
                   <div
                     style={{
