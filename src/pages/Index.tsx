@@ -320,16 +320,16 @@ export default function Index() {
                 </div>
               </div>
 
-              <div className="flex flex-col items-center">
+              <div>
                 <div
-                  className="overflow-hidden"
-                  style={{ width: "340px", height: "340px", borderRadius: "50%", border: "6px solid hsl(var(--rose-light))", flexShrink: 0 }}
+                  className="rounded-3xl overflow-hidden"
+                  style={{ background: "hsl(var(--sage-light))", aspectRatio: "3/4" }}
                 >
                   <img
                     src="https://cdn.poehali.dev/projects/d8ffcc0f-4381-4b97-b3bb-4962f16afd4d/bucket/e30d6b64-1193-45a7-a8c0-7939a6ab6804.jpg"
                     alt="Ирина Плотникова"
                     className="w-full h-full object-cover"
-                    style={{ objectPosition: "center 0%" }}
+                    style={{ objectPosition: "top center" }}
                   />
                 </div>
                 <div
