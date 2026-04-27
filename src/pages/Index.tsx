@@ -195,10 +195,10 @@ export default function Index() {
           style={{ background: "hsl(var(--sage-light))" }}
         >
           <img
-            src="https://cdn.poehali.dev/projects/d8ffcc0f-4381-4b97-b3bb-4962f16afd4d/bucket/e30d6b64-1193-45a7-a8c0-7939a6ab6804.jpg"
-            alt="Ирина Плотникова"
+            src="https://cdn.poehali.dev/projects/d8ffcc0f-4381-4b97-b3bb-4962f16afd4d/bucket/8f1a3fdf-4a57-4b46-97d8-38c762a4b366.jpg"
+            alt="Эстетика"
             className="w-full h-full object-cover"
-            style={{ objectPosition: "top center" }}
+            style={{ objectPosition: "center" }}
           />
         </div>
         <div
@@ -252,7 +252,7 @@ export default function Index() {
               className="flex gap-8 mt-12"
               style={{ animation: "fadeUp 0.7s ease 0.65s both" }}
             >
-              {[["с 2023", "в психологии"], ["2024", "окончила\nуниверситет"], ["10+", "женщин"], ["100%", "индивидуально"]].map(([n, l]) => (
+              {[["с 2023", "в\u00a0психологии"], ["2024", "окончила\nуниверситет"], ["10+", "женщин"], ["100%", "индивидуально"]].map(([n, l]) => (
                 <div key={n}>
                   <div
                     style={{
@@ -338,7 +338,7 @@ export default function Index() {
                 </div>
                 <div
                   className="mt-4 rounded-2xl p-5"
-                  style={{ background: "white", boxShadow: "0 4px 24px rgba(0,0,0,0.08)" }}
+                  style={{ background: "hsl(var(--rose-light))" }}
                 >
                   <div
                     style={{
@@ -351,7 +351,7 @@ export default function Index() {
                   >
                     «Я сама прошла этот путь и знаю, как это — жить не своей жизнью.»
                   </div>
-                  <div className="mt-2 text-xs" style={{ color: "hsl(var(--muted-foreground))" }}>
+                  <div className="mt-2 text-xs" style={{ color: "hsl(var(--rose-dark))" }}>
                     Ирина Плотникова
                   </div>
                 </div>
@@ -629,7 +629,7 @@ export default function Index() {
                 {[
                   { icon: "Phone", label: "Телефон", value: "+7 952 553-87-53" },
                   { icon: "Send", label: "Telegram", value: "@irina151718" },
-                  { icon: "Globe", label: "Формат", value: "Онлайн, по всему миру и офлайн, г. Россошь" },
+                  { icon: "Globe", label: "Формат", value: "Онлайн, по всему миру\nОфлайн, г. Россошь" },
                   { icon: "Clock", label: "Ответ", value: "В течение 24 часов" },
                 ].map((c) => (
                   <div key={c.label} className="flex items-center gap-4">
@@ -643,7 +643,7 @@ export default function Index() {
                       <div className="text-xs mb-0.5" style={{ color: "hsl(var(--muted-foreground))" }}>
                         {c.label}
                       </div>
-                      <div className="font-medium text-sm" style={{ color: "hsl(var(--warm-dark))" }}>
+                      <div className="font-medium text-sm" style={{ color: "hsl(var(--warm-dark))", whiteSpace: "pre-line" }}>
                         {c.value}
                       </div>
                     </div>
