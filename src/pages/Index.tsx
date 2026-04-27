@@ -320,13 +320,9 @@ export default function Index() {
                 </div>
               </div>
 
-              <div className="relative">
+              <div>
                 <div
-                  className="absolute -top-6 -left-6 w-full h-full rounded-3xl"
-                  style={{ background: "hsl(var(--rose-light))" }}
-                />
-                <div
-                  className="relative rounded-3xl overflow-hidden"
+                  className="rounded-3xl overflow-hidden"
                   style={{ background: "hsl(var(--sage-light))", aspectRatio: "3/4" }}
                 >
                   <img
@@ -351,7 +347,7 @@ export default function Index() {
                   >
                     «Я сама прошла этот путь и знаю, как это — жить не своей жизнью.»
                   </div>
-                  <div className="mt-2 text-xs" style={{ color: "hsl(var(--rose-dark))" }}>
+                  <div className="mt-2 text-xs font-medium" style={{ color: "hsl(var(--rose-dark))" }}>
                     Ирина Плотникова
                   </div>
                 </div>
