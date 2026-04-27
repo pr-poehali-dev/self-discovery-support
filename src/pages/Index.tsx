@@ -191,14 +191,14 @@ export default function Index() {
         style={{ paddingTop: "80px" }}
       >
         <div
-          className="absolute top-20 right-0 w-[38vw] h-[60vh] rounded-l-[80px] overflow-hidden"
+          className="absolute top-20 right-0 w-[40vw] h-[80vh] rounded-l-[80px] overflow-hidden hidden md:block"
           style={{ background: "hsl(var(--sage-light))" }}
         >
           <img
-            src={AESTHETIC_IMAGE}
-            alt="Эстетика"
+            src="https://cdn.poehali.dev/projects/d8ffcc0f-4381-4b97-b3bb-4962f16afd4d/bucket/e30d6b64-1193-45a7-a8c0-7939a6ab6804.jpg"
+            alt="Ирина Плотникова"
             className="w-full h-full object-cover"
-            style={{ mixBlendMode: "multiply", opacity: 0.55 }}
+            style={{ objectPosition: "top center" }}
           />
         </div>
         <div
@@ -211,7 +211,7 @@ export default function Index() {
         />
 
         <div className="relative z-10 container mx-auto px-6 md:px-12 max-w-6xl">
-          <div className="max-w-xl">
+          <div className="max-w-xl md:max-w-[50%]">
             <div
               className="inline-flex items-center gap-2 mb-8"
               style={{ animation: "fadeUp 0.6s ease 0.1s both" }}
@@ -252,7 +252,7 @@ export default function Index() {
               className="flex gap-8 mt-12"
               style={{ animation: "fadeUp 0.7s ease 0.65s both" }}
             >
-              {[["с 2023", "в психологии"], ["2024", "окончила университет"], ["10+", "женщин"], ["100%", "индивидуально"]].map(([n, l]) => (
+              {[["с 2023", "в психологии"], ["2024", "окончила\nуниверситет"], ["10+", "женщин"], ["100%", "индивидуально"]].map(([n, l]) => (
                 <div key={n}>
                   <div
                     style={{
@@ -265,7 +265,7 @@ export default function Index() {
                   >
                     {n}
                   </div>
-                  <div className="text-xs mt-1" style={{ color: "hsl(var(--muted-foreground))" }}>
+                  <div className="text-xs mt-1" style={{ color: "hsl(var(--muted-foreground))", whiteSpace: "pre-line" }}>
                     {l}
                   </div>
                 </div>
@@ -333,26 +333,26 @@ export default function Index() {
                     src="https://cdn.poehali.dev/projects/d8ffcc0f-4381-4b97-b3bb-4962f16afd4d/bucket/e30d6b64-1193-45a7-a8c0-7939a6ab6804.jpg"
                     alt="Ирина Плотникова"
                     className="w-full h-full object-cover"
-                    style={{ opacity: 1 }}
+                    style={{ opacity: 1, objectPosition: "top center" }}
                   />
+                </div>
+                <div
+                  className="mt-4 rounded-2xl p-5"
+                  style={{ background: "white", boxShadow: "0 4px 24px rgba(0,0,0,0.08)" }}
+                >
                   <div
-                    className="absolute bottom-6 left-6 right-6 rounded-2xl p-5"
-                    style={{ background: "white", boxShadow: "0 4px 24px rgba(0,0,0,0.08)" }}
+                    style={{
+                      fontFamily: "'Cormorant', serif",
+                      fontSize: "1.1rem",
+                      fontStyle: "italic",
+                      color: "hsl(var(--warm-dark))",
+                      lineHeight: 1.5,
+                    }}
                   >
-                    <div
-                      style={{
-                        fontFamily: "'Cormorant', serif",
-                        fontSize: "1.1rem",
-                        fontStyle: "italic",
-                        color: "hsl(var(--warm-dark))",
-                        lineHeight: 1.5,
-                      }}
-                    >
-                      «Я сама прошла этот путь и знаю, как это — жить не своей жизнью.»
-                    </div>
-                    <div className="mt-2 text-xs" style={{ color: "hsl(var(--muted-foreground))" }}>
-                      Ирина Плотникова
-                    </div>
+                    «Я сама прошла этот путь и знаю, как это — жить не своей жизнью.»
+                  </div>
+                  <div className="mt-2 text-xs" style={{ color: "hsl(var(--muted-foreground))" }}>
+                    Ирина Плотникова
                   </div>
                 </div>
               </div>
@@ -496,56 +496,61 @@ export default function Index() {
         style={{ background: "hsl(var(--sage-light))" }}
       >
         <div className="container mx-auto px-6 md:px-12 max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <AnimatedSection>
-              <div className="tag-sage mb-6">Результаты</div>
-              <h2 className="section-title mb-6">
-                В процессе работы<br />
-                <em style={{ fontStyle: "italic" }}>ты начинаешь</em>
-              </h2>
-              <p className="section-subtitle mb-10">
-                Меняется не только состояние — меняется то, как ты живёшь.
-              </p>
-              <button
-                onClick={() => scrollTo("#contact")}
-                className="btn-primary"
-              >
+          <AnimatedSection className="text-center mb-4">
+            <div className="tag-sage mx-auto mb-6" style={{ display: "inline-flex" }}>Результаты</div>
+          </AnimatedSection>
+          <AnimatedSection className="text-center mb-12">
+            <p
+              className="mx-auto max-w-xl"
+              style={{
+                fontFamily: "'Cormorant', serif",
+                fontSize: "clamp(1.2rem, 2.5vw, 1.7rem)",
+                fontStyle: "italic",
+                color: "hsl(var(--warm-dark))",
+                lineHeight: 1.4,
+              }}
+            >
+              В процессе работы меняется не только состояние —<br />
+              меняется то, как ты живёшь.
+            </p>
+          </AnimatedSection>
+
+          <AnimatedSection>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
+              {results.map((r) => (
+                <div
+                  key={r}
+                  className="flex items-center gap-4 rounded-2xl px-6 py-4 transition-all duration-300"
+                  style={{
+                    background: "white",
+                    boxShadow: "0 2px 12px rgba(0,0,0,0.05)",
+                    cursor: "default",
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLElement).style.transform = "translateY(-3px)";
+                    (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 20px rgba(0,0,0,0.1)";
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
+                    (e.currentTarget as HTMLElement).style.boxShadow = "0 2px 12px rgba(0,0,0,0.05)";
+                  }}
+                >
+                  <div
+                    className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
+                    style={{ background: "hsl(var(--sage-light))" }}
+                  >
+                    <Icon name="Check" size={14} />
+                  </div>
+                  <span style={{ color: "hsl(var(--warm-dark))", fontWeight: 400 }}>{r}</span>
+                </div>
+              ))}
+            </div>
+            <div className="text-center">
+              <button onClick={() => scrollTo("#contact")} className="btn-primary">
                 Хочу на сопровождение
               </button>
-            </AnimatedSection>
-
-            <AnimatedSection>
-              <div className="flex flex-col gap-3">
-                {results.map((r) => (
-                  <div
-                    key={r}
-                    className="flex items-center gap-4 rounded-2xl px-6 py-4 transition-all duration-300"
-                    style={{
-                      background: "white",
-                      boxShadow: "0 2px 12px rgba(0,0,0,0.05)",
-                      cursor: "default",
-                    }}
-                    onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLElement).style.transform = "translateX(6px)";
-                      (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 20px rgba(0,0,0,0.1)";
-                    }}
-                    onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLElement).style.transform = "translateX(0)";
-                      (e.currentTarget as HTMLElement).style.boxShadow = "0 2px 12px rgba(0,0,0,0.05)";
-                    }}
-                  >
-                    <div
-                      className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
-                      style={{ background: "hsl(var(--sage-light))" }}
-                    >
-                      <Icon name="Check" size={14} />
-                    </div>
-                    <span style={{ color: "hsl(var(--warm-dark))", fontWeight: 400 }}>{r}</span>
-                  </div>
-                ))}
-              </div>
-            </AnimatedSection>
-          </div>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
@@ -622,9 +627,9 @@ export default function Index() {
 
               <div className="flex flex-col gap-5">
                 {[
-                  { icon: "Phone", label: "Телефон", value: "+7 (999) 000-00-00" },
-                  { icon: "Send", label: "Telegram", value: "@irina_plotnikova" },
-                  { icon: "Globe", label: "Формат", value: "Онлайн, по всему миру" },
+                  { icon: "Phone", label: "Телефон", value: "+7 952 553-87-53" },
+                  { icon: "Send", label: "Telegram", value: "@irina151718" },
+                  { icon: "Globe", label: "Формат", value: "Онлайн, по всему миру и офлайн, г. Россошь" },
                   { icon: "Clock", label: "Ответ", value: "В течение 24 часов" },
                 ].map((c) => (
                   <div key={c.label} className="flex items-center gap-4">
