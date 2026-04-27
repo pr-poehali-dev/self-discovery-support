@@ -191,7 +191,7 @@ export default function Index() {
         style={{ paddingTop: "80px" }}
       >
         <div
-          className="absolute top-20 right-0 w-[55vw] h-[75vh] rounded-l-[80px] overflow-hidden"
+          className="absolute top-20 right-0 w-[38vw] h-[60vh] rounded-l-[80px] overflow-hidden"
           style={{ background: "hsl(var(--sage-light))" }}
         >
           <img
@@ -231,7 +231,8 @@ export default function Index() {
                 maxWidth: "540px",
               }}
             >
-              Как женщинам, которые привыкли тянуть всё на себе и потеряли себя в отношениях —{" "}
+              Как женщинам, которые привыкли тянуть всё на себе и потеряли себя в отношениях{" "}
+              <span style={{ fontSize: "0.7em", verticalAlign: "middle", color: "hsl(var(--muted-foreground))" }}>—</span>{" "}
               <em style={{ fontStyle: "italic", color: "hsl(var(--rose-dark))" }}>перестать предавать себя, снова слышать свои желания и выбирать себя без вины и страха</em>
             </h1>
 
@@ -329,10 +330,10 @@ export default function Index() {
                   style={{ background: "hsl(var(--sage-light))", aspectRatio: "3/4" }}
                 >
                   <img
-                    src={AESTHETIC_IMAGE}
-                    alt="Эстетика"
+                    src="https://cdn.poehali.dev/projects/d8ffcc0f-4381-4b97-b3bb-4962f16afd4d/bucket/e30d6b64-1193-45a7-a8c0-7939a6ab6804.jpg"
+                    alt="Ирина Плотникова"
                     className="w-full h-full object-cover"
-                    style={{ opacity: 0.8 }}
+                    style={{ opacity: 1 }}
                   />
                   <div
                     className="absolute bottom-6 left-6 right-6 rounded-2xl p-5"
