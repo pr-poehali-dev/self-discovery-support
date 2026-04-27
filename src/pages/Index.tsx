@@ -334,7 +334,7 @@ export default function Index() {
                 </div>
                 <div
                   className="rounded-2xl p-5"
-                  style={{ background: "hsl(var(--rose-light))", marginTop: "-18px", position: "relative", zIndex: 1 }}
+                  style={{ background: "hsl(var(--rose-light))", marginTop: "-18px", position: "relative", zIndex: 1, border: "1px solid hsl(20 15% 70%)" }}
                 >
                   <div
                     style={{
