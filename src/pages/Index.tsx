@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import Icon from "@/components/ui/icon";
 
-const HERO_IMAGE = "https://cdn.poehali.dev/projects/d8ffcc0f-4381-4b97-b3bb-4962f16afd4d/files/8d4df0d3-e423-43c4-897a-cdd69eb58733.jpg";
+const AESTHETIC_IMAGE = "https://cdn.poehali.dev/projects/d8ffcc0f-4381-4b97-b3bb-4962f16afd4d/files/f51be190-fc5a-4068-be46-687999d6eae2.jpg";
 
 const services = [
   {
@@ -130,9 +130,9 @@ export default function Index() {
           className="font-light tracking-wide"
           style={{ fontFamily: "'Cormorant', serif", fontSize: "1.3rem", color: "hsl(var(--warm-dark))" }}
         >
-          Ирина Плотникова
-          <span className="ml-2 text-sm" style={{ color: "hsl(var(--rose))", fontFamily: "'Golos Text', sans-serif" }}>
-            психолог
+          <span className="flex flex-col leading-tight">
+            <span>Ирина Плотникова</span>
+            <span style={{ color: "hsl(var(--rose))", fontFamily: "'Golos Text', sans-serif", fontSize: "0.8rem", fontWeight: 400 }}>психолог</span>
           </span>
         </a>
 
@@ -195,8 +195,8 @@ export default function Index() {
           style={{ background: "hsl(var(--sage-light))" }}
         >
           <img
-            src={HERO_IMAGE}
-            alt="Уютный кабинет психолога"
+            src={AESTHETIC_IMAGE}
+            alt="Эстетика"
             className="w-full h-full object-cover"
             style={{ mixBlendMode: "multiply", opacity: 0.55 }}
           />
@@ -222,31 +222,18 @@ export default function Index() {
             <h1
               style={{
                 fontFamily: "'Cormorant', serif",
-                fontSize: "clamp(2.8rem, 6vw, 5rem)",
+                fontSize: "clamp(1.9rem, 4.5vw, 3.8rem)",
                 fontWeight: 300,
-                lineHeight: 1.1,
+                lineHeight: 1.25,
                 color: "hsl(var(--warm-dark))",
-                letterSpacing: "-0.02em",
+                letterSpacing: "-0.01em",
                 animation: "fadeUp 0.7s ease 0.2s both",
+                maxWidth: "540px",
               }}
             >
-              Перестать предавать<br />
-              <em style={{ fontStyle: "italic", color: "hsl(var(--rose-dark))" }}>себя</em>
-              <br />и снова выбирать себя
+              Как женщинам, которые привыкли тянуть всё на себе и потеряли себя в отношениях —{" "}
+              <em style={{ fontStyle: "italic", color: "hsl(var(--rose-dark))" }}>перестать предавать себя, снова слышать свои желания и выбирать себя без вины и страха</em>
             </h1>
-
-            <p
-              className="mt-6 text-lg leading-relaxed"
-              style={{
-                fontFamily: "'Golos Text', sans-serif",
-                color: "hsl(var(--muted-foreground))",
-                fontWeight: 300,
-                animation: "fadeUp 0.7s ease 0.35s both",
-                maxWidth: "440px",
-              }}
-            >
-              Для женщин, которые привыкли тянуть всё на себе и потеряли себя в отношениях — без вины и страха.
-            </p>
 
             <div
               className="flex flex-wrap gap-4 mt-10"
@@ -264,7 +251,7 @@ export default function Index() {
               className="flex gap-8 mt-12"
               style={{ animation: "fadeUp 0.7s ease 0.65s both" }}
             >
-              {[["с 2023", "в психологии"], ["2024", "окончила университет"], ["100%", "индивидуально"]].map(([n, l]) => (
+              {[["с 2023", "в психологии"], ["2024", "окончила университет"], ["10+", "женщин"], ["100%", "индивидуально"]].map(([n, l]) => (
                 <div key={n}>
                   <div
                     style={{
@@ -342,10 +329,10 @@ export default function Index() {
                   style={{ background: "hsl(var(--sage-light))", aspectRatio: "3/4" }}
                 >
                   <img
-                    src={HERO_IMAGE}
-                    alt="Психолог"
+                    src={AESTHETIC_IMAGE}
+                    alt="Эстетика"
                     className="w-full h-full object-cover"
-                    style={{ opacity: 0.65 }}
+                    style={{ opacity: 0.8 }}
                   />
                   <div
                     className="absolute bottom-6 left-6 right-6 rounded-2xl p-5"
@@ -363,7 +350,7 @@ export default function Index() {
                       «Я сама прошла этот путь и знаю, как это — жить не своей жизнью.»
                     </div>
                     <div className="mt-2 text-xs" style={{ color: "hsl(var(--muted-foreground))" }}>
-                      — Ирина Плотникова
+                      Ирина Плотникова
                     </div>
                   </div>
                 </div>
@@ -791,7 +778,7 @@ export default function Index() {
               color: "hsl(var(--warm-dark))",
             }}
           >
-            Ирина Плотникова · Психолог
+            Ирина Плотникова, психолог
           </div>
           <div className="flex flex-wrap gap-6">
             {navLinks.map((l) => (
