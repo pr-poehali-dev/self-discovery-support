@@ -636,23 +636,41 @@ export default function Index() {
                     Чтобы прийти к тому, чего ты по-настоящему хочешь — жить в согласии с собой,
                   </span>
                   <span style={{ color: "hsl(var(--warm-dark))" }}>
-                    чувствовать, что ты можешь опираться на себя —
+                    чувствовать, что ты можешь опираться на себя:
                   </span>
-                  <span style={{ fontFamily: "'Cormorant', serif", fontStyle: "italic", fontSize: "1.15rem", color: "hsl(var(--rose-dark))" }}>
-                    когда внутри становится тише, появляется спокойная уверенность в своих решениях,
-                  </span>
-                  <span style={{ fontFamily: "'Cormorant', serif", fontStyle: "italic", fontSize: "1.15rem", color: "hsl(var(--rose-dark))" }}>
-                    когда тебе больше не нужно постоянно сомневаться, оправдываться или подстраиваться, чтобы сохранить отношения,
-                  </span>
-                  <span style={{ fontFamily: "'Cormorant', serif", fontStyle: "italic", fontSize: "1.15rem", color: "hsl(var(--rose-dark))" }}>
-                    когда ты перестаёшь каждый раз возвращаться в привычное «надо» и начинаешь замечать, где выбираешь не себя — и в этих моментах уже можешь действовать по-другому,
-                  </span>
-                  <span style={{ fontFamily: "'Cormorant', serif", fontStyle: "italic", fontSize: "1.15rem", color: "hsl(var(--rose-dark))" }}>
-                    когда ты спокойно говоришь «нет» без внутреннего отката в вину и не разрушаешься от чужих реакций,
-                  </span>
-                  <span style={{ fontFamily: "'Cormorant', serif", fontStyle: "italic", fontSize: "1.15rem", color: "hsl(var(--rose-dark))" }}>
-                    когда в отношениях появляется ты — а не только «удобная версия тебя»,
-                  </span>
+
+                  {/* Рамка с результатами "когда" */}
+                  <div style={{
+                    background: "hsl(var(--cream))",
+                    border: "1px solid hsl(20 15% 70%)",
+                    borderRadius: "1rem",
+                    padding: "20px 24px",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "12px",
+                  }}>
+                    {[
+                      { emoji: "🧘", text: "когда внутри становится тише, появляется спокойная уверенность в своих решениях," },
+                      { emoji: "🤝", text: "когда тебе больше не нужно постоянно сомневаться, оправдываться или подстраиваться, чтобы сохранить отношения," },
+                      { emoji: "✨", text: "когда ты перестаёшь каждый раз возвращаться в привычное «надо» и начинаешь замечать, где выбираешь не себя — и в этих моментах уже можешь действовать по-другому," },
+                      { emoji: "🛡️", text: "когда ты спокойно говоришь «нет» без внутреннего отката в вину и не разрушаешься от чужих реакций," },
+                      { emoji: "❤️", text: "когда в отношениях появляется ты — а не только «удобная версия тебя»," },
+                    ].map((item, i) => (
+                      <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
+                        <span style={{ fontSize: "1.2rem", flexShrink: 0, marginTop: "2px" }}>{item.emoji}</span>
+                        <span style={{
+                          fontFamily: "'Cormorant', serif",
+                          fontStyle: "italic",
+                          fontSize: "1.15rem",
+                          color: "hsl(var(--rose-dark))",
+                          lineHeight: 1.6,
+                        }}>
+                          {item.text}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
                   <span style={{ color: "hsl(var(--warm-dark))" }}>
                     и постепенно возвращаются энергия, желания и ощущение, что ты живёшь своей жизнью, а не проживаешь её «на автомате»,
                   </span>
