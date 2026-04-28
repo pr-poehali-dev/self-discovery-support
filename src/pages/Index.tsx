@@ -101,8 +101,6 @@ function AnimatedSection({ children, className = "" }: { children: React.ReactNo
 }
 
 export default function Index() {
-  const [formData, setFormData] = useState({ name: "", phone: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
@@ -606,167 +604,126 @@ export default function Index() {
         className="py-24 md:py-32"
         style={{ background: "hsl(var(--muted))" }}
       >
-        <div className="container mx-auto px-6 md:px-12 max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-16 items-start">
-            <AnimatedSection>
-              <div className="tag-rose mb-6">Начать работу</div>
+        <div className="container mx-auto px-6 md:px-12 max-w-2xl">
+          <AnimatedSection>
+            <div style={{ textAlign: "center" }}>
+              <div
+                style={{
+                  width: "48px",
+                  height: "3px",
+                  background: "hsl(var(--rose))",
+                  borderRadius: "2px",
+                  margin: "0 auto 32px",
+                }}
+              />
+
               <h2 className="section-title mb-6">
-                Если внутри есть:<br />
-                <em style={{ fontStyle: "italic" }}>«Я больше не могу так с собой»</em>
+                Получи самые выгодные<br />персональные условия
               </h2>
-              <p className="section-subtitle mb-6">
-                Значит ты уже в точке, где можно начать. Тебе не нужно заставлять себя и резко менять жизнь.
-              </p>
-              <p className="leading-relaxed mb-10" style={{ color: "hsl(var(--muted-foreground))", fontWeight: 300 }}>
-                Можно постепенно возвращаться к себе, жить своей жизнью и не предавать себя.
-              </p>
 
-              <div className="flex flex-col gap-5">
-                {[
-                  { icon: "Phone", label: "Телефон", value: "+7 952 553-87-53" },
-                  { icon: "Send", label: "Telegram", value: "@irina151718" },
-                  { icon: "Globe", label: "Формат", value: "Онлайн, по всему миру\nОфлайн, г. Россошь" },
-                  { icon: "Clock", label: "Ответ", value: "В течение 24 часов" },
-                ].map((c) => (
-                  <div key={c.label} className="flex items-center gap-4">
-                    <div
-                      className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
-                      style={{ background: "hsl(var(--rose-light))" }}
-                    >
-                      <Icon name={c.icon} size={18} />
-                    </div>
-                    <div>
-                      <div className="text-xs mb-0.5" style={{ color: "hsl(var(--muted-foreground))" }}>
-                        {c.label}
-                      </div>
-                      <div className="font-medium text-sm" style={{ color: "hsl(var(--warm-dark))", whiteSpace: "pre-line" }}>
-                        {c.value}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection>
-              {submitted ? (
-                <div
-                  className="card-soft flex flex-col items-center justify-center text-center py-16"
+              <div
+                style={{
+                  background: "hsl(var(--rose-light))",
+                  border: "1px solid hsl(20 15% 70%)",
+                  borderRadius: "1.25rem",
+                  padding: "28px 32px",
+                  marginBottom: "32px",
+                  textAlign: "left",
+                }}
+              >
+                <p style={{ color: "hsl(var(--warm-dark))", fontSize: "1.05rem", lineHeight: 1.7, marginBottom: "16px" }}>
+                  Чтобы прийти к тому, чего ты по-настоящему хочешь — жить в согласии с собой, чувствовать внутреннюю опору и наконец перестать предавать свои желания — напиши мне напрямую.
+                </p>
+                <p style={{ color: "hsl(var(--warm-dark))", fontSize: "1.05rem", lineHeight: 1.7 }}>
+                  Выбери удобный мессенджер и напиши мне в личные сообщения слово:
+                </p>
+                <p
+                  style={{
+                    fontFamily: "'Cormorant', serif",
+                    fontSize: "1.5rem",
+                    fontStyle: "italic",
+                    fontWeight: 600,
+                    color: "hsl(var(--rose-dark))",
+                    marginTop: "12px",
+                    textAlign: "center",
+                  }}
                 >
-                  <div
-                    className="w-16 h-16 rounded-full flex items-center justify-center mb-6"
-                    style={{ background: "hsl(var(--sage-light))" }}
-                  >
-                    <Icon name="Check" size={28} />
-                  </div>
-                  <h3
-                    style={{ fontFamily: "'Cormorant', serif", fontSize: "1.8rem", color: "hsl(var(--warm-dark))" }}
-                  >
-                    Заявка отправлена
-                  </h3>
-                  <p className="mt-3 text-sm" style={{ color: "hsl(var(--muted-foreground))" }}>
-                    Я свяжусь с вами в течение 24 часов
-                  </p>
-                </div>
-              ) : (
-                <div className="card-soft">
-                  <h3
-                    className="mb-6"
-                    style={{
-                      fontFamily: "'Cormorant', serif",
-                      fontSize: "1.6rem",
-                      color: "hsl(var(--warm-dark))",
-                    }}
-                  >
-                    Хочу на сопровождение
-                  </h3>
-                  <div className="flex flex-col gap-4">
-                    <div>
-                      <label
-                        className="text-xs font-medium block mb-1.5"
-                        style={{ color: "hsl(var(--muted-foreground))" }}
-                      >
-                        Имя
-                      </label>
-                      <input
-                        type="text"
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        placeholder="Твоё имя"
-                        className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all duration-200"
-                        style={{
-                          background: "hsl(var(--cream))",
-                          border: "1.5px solid hsl(var(--border))",
-                          color: "hsl(var(--foreground))",
-                          fontFamily: "'Golos Text', sans-serif",
-                        }}
-                        onFocus={(e) => ((e.target as HTMLInputElement).style.borderColor = "hsl(var(--rose))")}
-                        onBlur={(e) => ((e.target as HTMLInputElement).style.borderColor = "hsl(var(--border))")}
-                      />
-                    </div>
-                    <div>
-                      <label
-                        className="text-xs font-medium block mb-1.5"
-                        style={{ color: "hsl(var(--muted-foreground))" }}
-                      >
-                        Телефон или Telegram
-                      </label>
-                      <input
-                        type="tel"
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+7 (999) 000-00-00"
-                        className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all duration-200"
-                        style={{
-                          background: "hsl(var(--cream))",
-                          border: "1.5px solid hsl(var(--border))",
-                          color: "hsl(var(--foreground))",
-                          fontFamily: "'Golos Text', sans-serif",
-                        }}
-                        onFocus={(e) => ((e.target as HTMLInputElement).style.borderColor = "hsl(var(--rose))")}
-                        onBlur={(e) => ((e.target as HTMLInputElement).style.borderColor = "hsl(var(--border))")}
-                      />
-                    </div>
-                    <div>
-                      <label
-                        className="text-xs font-medium block mb-1.5"
-                        style={{ color: "hsl(var(--muted-foreground))" }}
-                      >
-                        С чем хотите обратиться?
-                      </label>
-                      <textarea
-                        value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        placeholder="Опиши коротко, что сейчас происходит..."
-                        rows={4}
-                        className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all duration-200 resize-none"
-                        style={{
-                          background: "hsl(var(--cream))",
-                          border: "1.5px solid hsl(var(--border))",
-                          color: "hsl(var(--foreground))",
-                          fontFamily: "'Golos Text', sans-serif",
-                        }}
-                        onFocus={(e) => ((e.target as HTMLTextAreaElement).style.borderColor = "hsl(var(--rose))")}
-                        onBlur={(e) => ((e.target as HTMLTextAreaElement).style.borderColor = "hsl(var(--border))")}
-                      />
-                    </div>
-                    <button
-                      onClick={() => {
-                        if (formData.name && formData.phone) setSubmitted(true);
-                      }}
-                      className="btn-primary w-full mt-2"
-                      style={{ padding: "0.875rem", fontSize: "0.9rem" }}
-                    >
-                      Хочу на сопровождение
-                    </button>
-                    <p className="text-center text-xs mt-1" style={{ color: "hsl(var(--muted-foreground))" }}>
-                      Отвечу в течение 24 часов
-                    </p>
-                  </div>
-                </div>
-              )}
-            </AnimatedSection>
-          </div>
+                  «Путь к себе»
+                </p>
+              </div>
+
+              <p style={{ color: "hsl(var(--muted-foreground))", fontSize: "0.95rem", marginBottom: "28px" }}>
+                Я отвечу и подберу для тебя персональные условия
+              </p>
+
+              <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+                <a
+                  href="https://t.me/irina151718"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "12px",
+                    padding: "16px 24px",
+                    borderRadius: "1rem",
+                    background: "hsl(200 80% 50%)",
+                    color: "#fff",
+                    fontSize: "1rem",
+                    fontWeight: 500,
+                    textDecoration: "none",
+                    transition: "opacity 0.2s",
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.85")}
+                  onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
+                >
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.68 7.92c-.12.56-.46.7-.93.43l-2.58-1.9-1.24 1.2c-.14.14-.26.26-.53.26l.19-2.68 4.88-4.41c.21-.19-.05-.29-.33-.1L7.92 14.6 5.37 13.8c-.55-.17-.56-.55.12-.82l9.07-3.5c.46-.17.86.11.71.82h.37z"/>
+                  </svg>
+                  Написать в Telegram
+                </a>
+
+                <a
+                  href="https://max.ru/u/f9LHodD0cOIDJO7b3GsFDqo7AwyJ6K_ZfksSWOiFwxRekcOz8X-iY9E9bvQ"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "12px",
+                    padding: "16px 24px",
+                    borderRadius: "1rem",
+                    background: "hsl(var(--sage))",
+                    color: "hsl(var(--warm-dark))",
+                    fontSize: "1rem",
+                    fontWeight: 500,
+                    textDecoration: "none",
+                    transition: "opacity 0.2s",
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.85")}
+                  onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
+                >
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="10" fill="hsl(140 22% 35%)" />
+                    <text x="12" y="16" textAnchor="middle" fontSize="10" fill="white" fontWeight="bold">Max</text>
+                  </svg>
+                  Написать в Max
+                </a>
+              </div>
+
+              <div
+                style={{
+                  width: "48px",
+                  height: "3px",
+                  background: "hsl(var(--sage))",
+                  borderRadius: "2px",
+                  margin: "36px auto 0",
+                }}
+              />
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
