@@ -633,7 +633,9 @@ export default function Index() {
               >
                 <div style={{ fontSize: "1.05rem", lineHeight: 1.8, marginBottom: "16px", display: "flex", flexDirection: "column", gap: "14px" }}>
                   <span style={{ color: "hsl(var(--warm-dark))" }}>
-                    Чтобы прийти к тому, чего ты по-настоящему хочешь — жить в согласии с собой,<br />
+                    Чтобы прийти к тому, чего ты по-настоящему хочешь — жить в согласии с собой,
+                  </span>
+                  <span style={{ color: "hsl(var(--warm-dark))" }}>
                     чувствовать, что ты можешь опираться на себя:
                   </span>
 
