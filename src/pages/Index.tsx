@@ -22,6 +22,25 @@ const services = [
   },
 ];
 
+const clubFeatures = [
+  "Регулярные встречи: разбор своего состояния «здесь и сейчас»",
+  "Поддержка в моменты, когда тянет в старые сценарии",
+  "Разборы ситуаций участниц — видишь, где снова идёшь против себя",
+  "Работа с темой тела и близости: почему пропадает желание, сложно сказать «нет»",
+  "Мягкие телесные практики на расслабление и снижение тревоги",
+  "Объяснение «что со мной происходит» — чтобы не пугаться своих реакций",
+  "Пространство, где ты не одна и тебя понимают",
+];
+
+const clubResults = [
+  "Перестаёшь жить в постоянном внутреннем напряжении",
+  "Тело начинает расслабляться рядом с мужчиной",
+  "Легче говорить о своих чувствах и желаниях",
+  "Замечаешь, где автоматически предаёшь себя",
+  "Уменьшается страх обидеть или «быть неудобной»",
+  "Появляется больше спокойствия и контакта с собой",
+];
+
 const steps = [
   {
     num: "01",
@@ -106,6 +125,7 @@ export default function Index() {
   const navLinks = [
     { label: "Для кого", href: "#about" },
     { label: "Форматы", href: "#services" },
+    { label: "Женский клуб", href: "#club" },
     { label: "Как проходит", href: "#process" },
     { label: "Результаты", href: "#results" },
     { label: "Отзывы", href: "#reviews" },
@@ -193,8 +213,8 @@ export default function Index() {
           style={{ background: "hsl(var(--sage-light))" }}
         >
           <img
-            src="https://cdn.poehali.dev/projects/d8ffcc0f-4381-4b97-b3bb-4962f16afd4d/bucket/8f1a3fdf-4a57-4b46-97d8-38c762a4b366.jpg"
-            alt="Эстетика"
+            src="https://cdn.poehali.dev/projects/d8ffcc0f-4381-4b97-b3bb-4962f16afd4d/files/8564b354-0d9a-4f46-b799-26f00fe90426.jpg"
+            alt="Женщина в гармоничных отношениях"
             className="w-full h-full object-cover"
             style={{ objectPosition: "center" }}
           />
@@ -343,7 +363,7 @@ export default function Index() {
                       lineHeight: 1.5,
                     }}
                   >
-                    «Я сама прошла этот путь и знаю, как это — жить не своей жизнью.»
+                    «Я сама прошла этот путь и знаю, как это — терпеть, молчать и сохранять отношения ценой себя.»
                   </div>
                   <div className="mt-2 text-xs font-medium" style={{ color: "hsl(var(--rose-dark))" }}>
                     Ирина Плотникова
@@ -429,6 +449,113 @@ export default function Index() {
               </AnimatedSection>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* CLUB */}
+      <section id="club" className="py-24 md:py-32" style={{ background: "hsl(var(--background))" }}>
+        <div className="container mx-auto px-6 md:px-12 max-w-6xl">
+          <AnimatedSection className="text-center mb-16">
+            <div className="tag-rose mx-auto mb-6" style={{ display: "inline-flex" }}>Групповой формат</div>
+            <h2 className="section-title">Женский клуб «Я есть»</h2>
+            <p className="section-subtitle mt-4 max-w-2xl mx-auto">
+              Поддерживающее пространство для женщин, которые слишком долго терпели, молчали, подстраивались и жили в постоянном напряжении. И теперь хотят снова чувствовать лёгкость и спокойствие в теле.
+            </p>
+          </AnimatedSection>
+
+          <div className="grid md:grid-cols-2 gap-10 mb-12">
+            {/* Основной тариф — 9 месяцев */}
+            <AnimatedSection>
+              <div className="card-soft h-full flex flex-col" style={{ borderTop: "3px solid hsl(var(--rose))" }}>
+                <div className="flex items-start gap-4 mb-5">
+                  <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "hsl(var(--rose-light))" }}>
+                    <Icon name="Users" size={20} />
+                  </div>
+                  <div>
+                    <h3 style={{ fontFamily: "'Cormorant', serif", fontSize: "1.5rem", fontWeight: 500, color: "hsl(var(--warm-dark))" }}>
+                      Клуб — 9 месяцев
+                    </h3>
+                    <p className="text-xs mt-1" style={{ color: "hsl(var(--muted-foreground))" }}>полный формат участия</p>
+                  </div>
+                </div>
+                <div className="flex flex-col gap-2.5 mb-6 flex-1">
+                  {clubFeatures.map((f) => (
+                    <div key={f} className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: "hsl(var(--rose-light))" }}>
+                        <Icon name="Check" size={11} />
+                      </div>
+                      <span className="text-sm leading-relaxed" style={{ color: "hsl(var(--foreground))", fontWeight: 400 }}>{f}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="pt-4 flex items-center justify-between" style={{ borderTop: "1px solid hsl(var(--border))" }}>
+                  <div>
+                    <div className="text-xs mb-0.5" style={{ color: "hsl(var(--muted-foreground))" }}>стоимость</div>
+                    <span style={{ fontFamily: "'Cormorant', serif", fontSize: "1.5rem", fontWeight: 600, color: "hsl(var(--rose-dark))" }}>35 000 ₽</span>
+                    <span className="text-xs ml-1" style={{ color: "hsl(var(--muted-foreground))" }}>за 9 месяцев</span>
+                  </div>
+                  <button onClick={() => scrollTo("#contact")} className="btn-primary" style={{ padding: "0.5rem 1.25rem", fontSize: "0.8rem" }}>
+                    Вступить
+                  </button>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            {/* Гостевой тариф — 1 месяц */}
+            <AnimatedSection>
+              <div className="card-soft h-full flex flex-col" style={{ borderTop: "3px solid hsl(var(--sage))" }}>
+                <div className="flex items-start gap-4 mb-5">
+                  <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "hsl(var(--sage-light))" }}>
+                    <Icon name="Leaf" size={20} />
+                  </div>
+                  <div>
+                    <h3 style={{ fontFamily: "'Cormorant', serif", fontSize: "1.5rem", fontWeight: 500, color: "hsl(var(--warm-dark))" }}>
+                      Гостевой тариф — 1 месяц
+                    </h3>
+                    <p className="text-xs mt-1" style={{ color: "hsl(var(--muted-foreground))" }}>тест-драйв клуба</p>
+                  </div>
+                </div>
+                <p className="text-sm leading-relaxed mb-5" style={{ color: "hsl(var(--muted-foreground))" }}>
+                  Формат, чтобы познакомиться с клубом, почувствовать атмосферу и увидеть первые изменения. Участие во встречах, разборы ситуаций, базовые телесные практики и поддержка.
+                </p>
+                <div className="rounded-xl p-4 mb-5 text-sm" style={{ background: "hsl(var(--muted))", color: "hsl(var(--muted-foreground))" }}>
+                  <div className="font-medium mb-1" style={{ color: "hsl(var(--warm-dark))" }}>Без доступа:</div>
+                  <div>— к полной базе «Записи и практики»</div>
+                  <div>— к глубоким материалам клуба</div>
+                </div>
+                <div className="flex-1" />
+                <div className="pt-4 flex items-center justify-between" style={{ borderTop: "1px solid hsl(var(--border))" }}>
+                  <div>
+                    <div className="text-xs mb-0.5" style={{ color: "hsl(var(--muted-foreground))" }}>стоимость</div>
+                    <span style={{ fontFamily: "'Cormorant', serif", fontSize: "1.5rem", fontWeight: 600, color: "hsl(var(--sage-dark))" }}>6 000 ₽</span>
+                    <span className="text-xs ml-1" style={{ color: "hsl(var(--muted-foreground))" }}>за 1 месяц</span>
+                  </div>
+                  <button onClick={() => scrollTo("#contact")} className="btn-outline" style={{ padding: "0.5rem 1.25rem", fontSize: "0.8rem" }}>
+                    Попробовать
+                  </button>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+
+          {/* Результаты клуба */}
+          <AnimatedSection>
+            <div className="rounded-3xl p-8 md:p-10" style={{ background: "hsl(var(--rose-light))", border: "1px solid hsl(20 15% 80%)" }}>
+              <h3 className="text-center mb-8" style={{ fontFamily: "'Cormorant', serif", fontSize: "1.6rem", fontWeight: 500, color: "hsl(var(--warm-dark))" }}>
+                Результат участия в клубе
+              </h3>
+              <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {clubResults.map((r) => (
+                  <div key={r} className="flex items-start gap-3">
+                    <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: "hsl(var(--rose))", opacity: 0.7 }}>
+                      <Icon name="Check" size={11} />
+                    </div>
+                    <span className="text-sm leading-relaxed" style={{ color: "hsl(var(--warm-dark))", fontWeight: 400 }}>{r}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
