@@ -102,9 +102,9 @@ const reviews = [
     sessions: "Базовый",
   },
   {
-    name: "Ирина",
-    text: "Здравствуйте, Ирина Александровна! Вы не только научили меня справляться с тревожностью, но и помогли улучшить взаимодействие с людьми. Выходы к доске стали даваться в разы легче, и у меня больше нет тремора. Большое достижение — умение отстаивать себя и свои интересы.",
-    sessions: "VIP",
+    name: "Алина",
+    text: "Раньше я не понимала, почему внутри всегда это сжатие — даже когда всё вроде нормально. После работы с Ириной я первый раз за долгое время почувствовала, что можно просто выдохнуть. Не ждать подвоха. Не готовиться к худшему. Это очень непривычное — и очень хорошее — ощущение.",
+    sessions: "Базовый",
   },
 ];
 
@@ -226,27 +226,27 @@ export default function Index() {
     <div className="min-h-screen" style={{ background: "hsl(var(--background))" }}>
       {/* NAV */}
       <nav
-        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4"
+        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-8 py-3"
         style={{ background: "hsl(30 20% 97% / 0.92)", backdropFilter: "blur(16px)", borderBottom: "1px solid hsl(var(--border))" }}
       >
         <a
           href="#"
           className="font-light tracking-wide flex-shrink-0"
-          style={{ fontFamily: "'Cormorant', serif", fontSize: "1.3rem", color: "hsl(var(--warm-dark))" }}
+          style={{ fontFamily: "'Cormorant', serif", fontSize: "1.1rem", color: "hsl(var(--warm-dark))" }}
         >
           <span className="flex flex-col leading-tight">
             <span>Ирина Пархоменко</span>
-            <span style={{ color: "hsl(var(--rose))", fontFamily: "'Golos Text', sans-serif", fontSize: "0.8rem", fontWeight: 400 }}>психолог · психосоматолог</span>
+            <span style={{ color: "hsl(var(--rose))", fontFamily: "'Golos Text', sans-serif", fontSize: "0.7rem", fontWeight: 400 }}>психолог · психосоматолог</span>
           </span>
         </a>
 
-        <div className="hidden md:flex items-center gap-5 xl:gap-7 mx-4">
+        <div className="hidden lg:flex items-center gap-3 xl:gap-5 mx-3">
           {navLinks.map((l) => (
             <button
               key={l.label}
               onClick={() => scrollTo(l.href)}
-              className="text-sm transition-colors duration-200 whitespace-nowrap"
-              style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'Golos Text', sans-serif", background: "none", border: "none", cursor: "pointer" }}
+              className="transition-colors duration-200 whitespace-nowrap"
+              style={{ fontSize: "0.78rem", color: "hsl(var(--muted-foreground))", fontFamily: "'Golos Text', sans-serif", background: "none", border: "none", cursor: "pointer" }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "hsl(var(--rose-dark))")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "hsl(var(--muted-foreground))")}
             >
@@ -255,15 +255,13 @@ export default function Index() {
           ))}
         </div>
 
-        <a
-          href={TG_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-primary hidden md:inline-flex"
-          style={{ padding: "0.5rem 1.5rem", fontSize: "0.85rem", textDecoration: "none", flexShrink: 0 }}
+        <button
+          onClick={() => scrollTo("#contact")}
+          className="btn-primary hidden lg:inline-flex"
+          style={{ padding: "0.4rem 1.1rem", fontSize: "0.8rem", flexShrink: 0 }}
         >
           Записаться
-        </a>
+        </button>
 
         <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)} style={{ background: "none", border: "none", cursor: "pointer" }}>
           <Icon name={menuOpen ? "X" : "Menu"} size={22} />
@@ -347,9 +345,9 @@ export default function Index() {
               className="flex flex-wrap gap-4 mt-10"
               style={{ animation: "fadeUp 0.7s ease 0.5s both" }}
             >
-              <a href={TG_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ textDecoration: "none" }}>
+              <button onClick={() => scrollTo("#contact")} className="btn-primary">
                 Хочу начать
-              </a>
+              </button>
               <button onClick={() => scrollTo("#about")} className="btn-outline">
                 Узнать подробнее
               </button>
@@ -383,7 +381,7 @@ export default function Index() {
       </section>
 
       {/* PAIN */}
-      <section className="py-16 md:py-20" style={{ background: "hsl(var(--background))" }}>
+      <section className="py-8 md:py-10" style={{ background: "hsl(var(--background))" }}>
         <div className="container mx-auto px-6 md:px-12 max-w-3xl">
           <AnimatedSection>
             <div className="text-center mb-10">
@@ -444,16 +442,16 @@ export default function Index() {
             </div>
 
             <div className="text-center">
-              <a href={TG_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ textDecoration: "none" }}>
+              <button onClick={() => scrollTo("#contact")} className="btn-primary">
                 Хочу начать
-              </a>
+              </button>
             </div>
           </AnimatedSection>
         </div>
       </section>
 
       {/* ABOUT / FOR WHOM */}
-      <section id="about" className="py-16 md:py-20" style={{ background: "hsl(38 40% 94%)" }}>
+      <section id="about" className="py-8 md:py-10" style={{ background: "hsl(38 40% 94%)" }}>
         <div className="container mx-auto px-6 md:px-12 max-w-6xl">
           <AnimatedSection>
             <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -542,7 +540,7 @@ export default function Index() {
       </section>
 
       {/* ALREADY TRIED */}
-      <section className="py-16 md:py-20" style={{ background: "hsl(var(--muted))" }}>
+      <section className="py-8 md:py-10" style={{ background: "hsl(var(--muted))" }}>
         <div className="container mx-auto px-6 md:px-12 max-w-3xl">
           <AnimatedSection>
             <h2 className="section-title text-center mb-8">
@@ -589,8 +587,8 @@ export default function Index() {
               </p>
             </div>
             <div className="text-center mt-8">
-              <button onClick={() => scrollTo("#services")} className="btn-outline">
-                Узнать подробнее
+              <button onClick={() => scrollTo("#contact")} className="btn-outline">
+                Записаться
               </button>
             </div>
           </AnimatedSection>
@@ -598,10 +596,10 @@ export default function Index() {
       </section>
 
       {/* PROCESS */}
-      <section id="process" className="py-16 md:py-20">
+      <section id="process" className="py-8 md:py-10">
         <div className="container mx-auto px-6 md:px-12 max-w-6xl">
-          <AnimatedSection className="text-center mb-14">
-            <div className="tag-rose mx-auto mb-6" style={{ display: "inline-flex" }}>Как проходит работа</div>
+          <AnimatedSection className="text-center mb-8">
+            <div className="tag-rose mx-auto mb-4" style={{ display: "inline-flex" }}>Как проходит работа</div>
             <h2 className="section-title">Мы работаем по&#8209;настоящему</h2>
             <p className="section-subtitle mt-4 max-w-lg mx-auto">
               Не «упражнения для расслабления» и не «думайте позитивно». А то, как вы живёте на самом деле.
@@ -658,7 +656,7 @@ export default function Index() {
       {/* RESULTS */}
       <section
         id="results"
-        className="py-16 md:py-20"
+        className="py-8 md:py-10"
         style={{ background: "hsl(var(--sage-light))" }}
       >
         <div className="container mx-auto px-6 md:px-12 max-w-6xl">
@@ -712,9 +710,9 @@ export default function Index() {
               ))}
             </div>
             <div className="text-center">
-              <a href={TG_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ textDecoration: "none" }}>
+              <button onClick={() => scrollTo("#contact")} className="btn-primary">
                 Хочу на сопровождение
-              </a>
+              </button>
             </div>
           </AnimatedSection>
         </div>
@@ -723,12 +721,12 @@ export default function Index() {
       {/* SERVICES */}
       <section
         id="services"
-        className="py-16 md:py-20"
+        className="py-8 md:py-10"
         style={{ background: "hsl(var(--muted))" }}
       >
         <div className="container mx-auto px-6 md:px-12 max-w-6xl">
-          <AnimatedSection className="text-center mb-14">
-            <div className="tag-sage mx-auto mb-6" style={{ display: "inline-flex" }}>Форматы сопровождения</div>
+          <AnimatedSection className="text-center mb-8">
+            <div className="tag-sage mx-auto mb-4" style={{ display: "inline-flex" }}>Форматы сопровождения</div>
             <h2 className="section-title">Выберите свой путь</h2>
           </AnimatedSection>
 
@@ -785,15 +783,13 @@ export default function Index() {
                     </div>
                   </div>
                   <div className="mt-auto pt-4 flex items-center justify-end" style={{ borderTop: "1px solid hsl(var(--border))" }}>
-                    <a
-                      href={TG_LINK}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button
+                      onClick={() => scrollTo("#contact")}
                       className={s.tag === "rose" ? "btn-primary" : "btn-outline"}
-                      style={{ padding: "0.5rem 1.25rem", fontSize: "0.8rem", textDecoration: "none" }}
+                      style={{ padding: "0.5rem 1.25rem", fontSize: "0.8rem" }}
                     >
                       {s.btn}
-                    </a>
+                    </button>
                   </div>
                 </div>
               </AnimatedSection>
@@ -821,16 +817,16 @@ export default function Index() {
               <p className="text-sm mb-6" style={{ color: "hsl(var(--muted-foreground))" }}>
                 …значит, вам уже пора к себе.
               </p>
-              <a href={TG_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ textDecoration: "none" }}>
+              <button onClick={() => scrollTo("#contact")} className="btn-primary">
                 Хочу на сопровождение
-              </a>
+              </button>
             </div>
           </AnimatedSection>
         </div>
       </section>
 
       {/* AUTHOR */}
-      <section className="py-16 md:py-20" style={{ background: "hsl(38 40% 94%)" }}>
+      <section className="py-8 md:py-10" style={{ background: "hsl(38 40% 94%)" }}>
         <div className="container mx-auto px-6 md:px-12 max-w-4xl">
           <AnimatedSection>
             <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -902,10 +898,10 @@ export default function Index() {
       </section>
 
       {/* REVIEWS */}
-      <section id="reviews" className="py-16 md:py-20">
+      <section id="reviews" className="py-8 md:py-10">
         <div className="container mx-auto px-6 md:px-12 max-w-6xl">
-          <AnimatedSection className="text-center mb-12">
-            <div className="tag-rose mx-auto mb-6" style={{ display: "inline-flex" }}>Отзывы</div>
+          <AnimatedSection className="text-center mb-6">
+            <div className="tag-rose mx-auto mb-4" style={{ display: "inline-flex" }}>Отзывы</div>
             <h2 className="section-title">Они уже выбрали себя</h2>
             <p className="section-subtitle mt-4">
               Имена изменены с согласия клиенток
@@ -952,10 +948,10 @@ export default function Index() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="py-16 md:py-20" style={{ background: "hsl(var(--muted))" }}>
+      <section id="faq" className="py-8 md:py-10" style={{ background: "hsl(var(--muted))" }}>
         <div className="container mx-auto px-6 md:px-12 max-w-3xl">
-          <AnimatedSection className="text-center mb-10">
-            <div className="tag-sage mx-auto mb-6" style={{ display: "inline-flex" }}>Частые вопросы</div>
+          <AnimatedSection className="text-center mb-6">
+            <div className="tag-sage mx-auto mb-4" style={{ display: "inline-flex" }}>Частые вопросы</div>
             <h2 className="section-title">То, о чём страшно спросить</h2>
           </AnimatedSection>
 
@@ -985,15 +981,9 @@ export default function Index() {
               <p className="text-sm mb-6" style={{ color: "hsl(var(--muted-foreground))" }}>
                 Напишите мне. Тихим голосом, даже если стыдно. Я не осуждаю. Я была там, где вы.
               </p>
-              <a
-                href={TG_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary"
-                style={{ textDecoration: "none" }}
-              >
-                Задать вопрос в личные сообщения
-              </a>
+              <button onClick={() => scrollTo("#contact")} className="btn-primary">
+                Задать вопрос в личные
+              </button>
             </div>
           </AnimatedSection>
         </div>
@@ -1002,7 +992,7 @@ export default function Index() {
       {/* CONTACT */}
       <section
         id="contact"
-        className="py-16 md:py-20"
+        className="py-8 md:py-12"
         style={{ background: "hsl(var(--background))" }}
       >
         <div className="container mx-auto px-6 md:px-12 max-w-2xl">
