@@ -1,15 +1,22 @@
 import { useEffect, useRef, useState } from "react";
 import Icon from "@/components/ui/icon";
 
+const TG_LINK = "https://t.me/irina151718";
+const MAX_LINK = "https://max.ru/u/f9LHodD0cOIDJO7b3GsFDqo7AwyJ6K_ZfksSWOiFwxRekcOz8X-iY9E9bvQ";
+
 const services = [
   {
     icon: "Heart",
-    title: "Базовый — «Можно выдохнуть»",
+    title: "Базовый",
+    titleSub: "«Можно выдохнуть»",
     subtitle: "2 месяца / 8 встреч",
     desc: "Для тех, кто хочет перестать жить в постоянном напряжении и начать возвращаться к себе.",
     results: [
-      "Перестанете постоянно ждать подвоха",
-      "Тело начнёт постепенно расслабляться",
+      "Перестанете в каждом затишье верить, что «вот теперь наладится» — и снова обжигаться",
+      "Перестанете чувствовать, как тело сжимается, когда он входит в комнату",
+      "Перестанет перехватывать горло, когда нужно сказать «нет»",
+      "Перестанете жить в ожидании: «сейчас что-то случится»",
+      "Тело начнёт расслабляться",
       "Начнёте слышать себя и свои желания",
       "Появится первое ощущение: «Мне можно выдохнуть»",
     ],
@@ -18,7 +25,8 @@ const services = [
   },
   {
     icon: "Sparkles",
-    title: "VIP — «Жить собой»",
+    title: "VIP",
+    titleSub: "«Жить собой»",
     subtitle: "3 месяца / 12 встреч",
     desc: "Глубокий формат для тех, кто хочет не просто облегчения, а полностью перестать терять себя в отношениях.",
     results: [
@@ -37,7 +45,7 @@ const steps = [
   {
     num: "01",
     title: "Ваши реальные ситуации",
-    desc: "Работаем с тем, что случилось на этой неделе — не с абстрактными темами, а с вашей реальной жизнью.",
+    desc: "Разбираем ваши ситуации — те, что повторяются годами, отнимают силы и не дают выдохнуть.",
   },
   {
     num: "02",
@@ -69,18 +77,33 @@ const results = [
 
 const reviews = [
   {
-    name: "Марина",
-    text: "Я не верила, что что-то изменится. Казалось — уже слишком долго терплю. Но уже через месяц работы я впервые не извинилась за своё «нет». Это было что-то невероятное.",
+    name: "Анна",
+    text: "Я шла с интересом, но с первой недели что-то начало меняться внутри. Самым ценным стало узнать о своих страхах — и не испугаться их. Спустя время я замечаю, что моё состояние стало гораздо лучше. Появилась внутренняя лёгкость. Это бесценно.",
+    sessions: "Базовый",
+  },
+  {
+    name: "Вика",
+    text: "Та Вика, которая была год назад — маленькая, пугливая, которая пыталась быть удобной для всех. Сейчас я каждый день взрослею, и мой внутренний баланс укрепляется. Я начала общаться с близкими открыто — раньше такого не было никогда.",
+    sessions: "VIP",
+  },
+  {
+    name: "Наталья",
+    text: "Благодарю тебя, Ирина, за твою помощь! Моя жизнь начала меняться на глазах, и окружающие мне это подтверждают. Я даже не думала, что такие изменения за месяц могут быть. Терапии, которые ты даришь, дают удивительный результат. Это того стоит!",
+    sessions: "VIP",
+  },
+  {
+    name: "Светлана",
+    text: "Я шла к Вам с отпечатком проблем и тревог, а вышла — с пониманием и инструментами для изменений. Самое ценное — я начала обретать внутреннюю лёгкость. Не потому что жизнь стала идеальной, а потому что я учусь иначе реагировать на внешние обстоятельства.",
     sessions: "Базовый",
   },
   {
     name: "Елена",
-    text: "Я думала, что холодность — это про меня. Оказалось, тело просто устало терпеть. Теперь я понимаю, что со мной происходило все эти годы.",
-    sessions: "VIP",
+    text: "Мне стало легче морально. Я стала слышать свой внутренний голос. Любить, уважать, радовать себя мелочами и ценить себя — это действительно то, что нужно женщинам! Моя самооценка поднялась, и я чувствую себя теперь спокойнее.",
+    sessions: "Базовый",
   },
   {
-    name: "Ольга",
-    text: "Ирина помогла мне увидеть, как я исчезала рядом с ним. Постепенно я начала возвращаться — в своё тело, в свою жизнь. Это очень тихо, но очень настоящее.",
+    name: "Ирина",
+    text: "Здравствуйте, Ирина Александровна! Вы не только научили меня справляться с тревожностью, но и помогли улучшить взаимодействие с людьми. Выходы к доске стали даваться в разы легче, и у меня больше нет тремора. Большое достижение — умение отстаивать себя и свои интересы.",
     sessions: "VIP",
   },
 ];
@@ -208,7 +231,7 @@ export default function Index() {
       >
         <a
           href="#"
-          className="font-light tracking-wide"
+          className="font-light tracking-wide flex-shrink-0"
           style={{ fontFamily: "'Cormorant', serif", fontSize: "1.3rem", color: "hsl(var(--warm-dark))" }}
         >
           <span className="flex flex-col leading-tight">
@@ -217,12 +240,12 @@ export default function Index() {
           </span>
         </a>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-5 xl:gap-7 mx-4">
           {navLinks.map((l) => (
             <button
               key={l.label}
               onClick={() => scrollTo(l.href)}
-              className="text-sm transition-colors duration-200"
+              className="text-sm transition-colors duration-200 whitespace-nowrap"
               style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'Golos Text', sans-serif", background: "none", border: "none", cursor: "pointer" }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "hsl(var(--rose-dark))")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "hsl(var(--muted-foreground))")}
@@ -230,14 +253,17 @@ export default function Index() {
               {l.label}
             </button>
           ))}
-          <button
-            onClick={() => scrollTo("#contact")}
-            className="btn-primary"
-            style={{ padding: "0.5rem 1.5rem", fontSize: "0.85rem" }}
-          >
-            Записаться
-          </button>
         </div>
+
+        <a
+          href={TG_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-primary hidden md:inline-flex"
+          style={{ padding: "0.5rem 1.5rem", fontSize: "0.85rem", textDecoration: "none", flexShrink: 0 }}
+        >
+          Записаться
+        </a>
 
         <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)} style={{ background: "none", border: "none", cursor: "pointer" }}>
           <Icon name={menuOpen ? "X" : "Menu"} size={22} />
@@ -259,9 +285,9 @@ export default function Index() {
               {l.label}
             </button>
           ))}
-          <button onClick={() => scrollTo("#contact")} className="btn-primary mt-4">
+          <a href={TG_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary mt-4" style={{ textDecoration: "none" }}>
             Записаться
-          </button>
+          </a>
         </div>
       )}
 
@@ -321,9 +347,9 @@ export default function Index() {
               className="flex flex-wrap gap-4 mt-10"
               style={{ animation: "fadeUp 0.7s ease 0.5s both" }}
             >
-              <button onClick={() => scrollTo("#contact")} className="btn-primary">
+              <a href={TG_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ textDecoration: "none" }}>
                 Хочу начать
-              </button>
+              </a>
               <button onClick={() => scrollTo("#about")} className="btn-outline">
                 Узнать подробнее
               </button>
@@ -333,7 +359,7 @@ export default function Index() {
               className="flex gap-8 mt-12"
               style={{ animation: "fadeUp 0.7s ease 0.65s both" }}
             >
-              {[["с 2020", "в\u00a0психологии"], ["500+", "часов\nпрактики"], ["50+", "женщин"], ["100%", "индивидуально"]].map(([n, l]) => (
+              {[["с 2023", "в\u00a0психологии"], ["500+", "часов\nпрактики"], ["13+", "женщин"], ["100%", "индивидуально"]].map(([n, l]) => (
                 <div key={n}>
                   <div
                     style={{
@@ -357,11 +383,11 @@ export default function Index() {
       </section>
 
       {/* PAIN */}
-      <section className="py-24 md:py-32" style={{ background: "hsl(var(--background))" }}>
+      <section className="py-16 md:py-20" style={{ background: "hsl(var(--background))" }}>
         <div className="container mx-auto px-6 md:px-12 max-w-3xl">
           <AnimatedSection>
-            <div className="text-center mb-12">
-              <div className="tag-rose mx-auto mb-6" style={{ display: "inline-flex" }}>Если вы читаете этот текст</div>
+            <div className="text-center mb-10">
+              <div className="tag-rose mx-auto mb-6" style={{ display: "inline-flex" }}>Если вы читаете этот текст — значит</div>
               <h2 className="section-title mb-6">
                 Ваше тело уже давно кричит.<br />
                 <em style={{ fontStyle: "italic" }}>А вы всё терпите.</em>
@@ -369,7 +395,7 @@ export default function Index() {
             </div>
 
             <div
-              className="rounded-3xl p-8 md:p-10 mb-10"
+              className="rounded-3xl p-8 md:p-10 mb-8"
               style={{ background: "hsl(var(--rose-light))", border: "1px solid hsl(20 15% 80%)" }}
             >
               <p
@@ -392,7 +418,7 @@ export default function Index() {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-4 mb-10">
+            <div className="grid sm:grid-cols-2 gap-3 mb-8">
               {[
                 { icon: "Wind", text: "Грудь сжимается, дыхание поверхностное" },
                 { icon: "AlertCircle", text: "Внутри постоянная тревога, даже когда всё «нормально»" },
@@ -418,16 +444,16 @@ export default function Index() {
             </div>
 
             <div className="text-center">
-              <button onClick={() => scrollTo("#contact")} className="btn-primary">
+              <a href={TG_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ textDecoration: "none" }}>
                 Хочу начать
-              </button>
+              </a>
             </div>
           </AnimatedSection>
         </div>
       </section>
 
       {/* ABOUT / FOR WHOM */}
-      <section id="about" className="py-24 md:py-32" style={{ background: "hsl(38 40% 94%)" }}>
+      <section id="about" className="py-16 md:py-20" style={{ background: "hsl(38 40% 94%)" }}>
         <div className="container mx-auto px-6 md:px-12 max-w-6xl">
           <AnimatedSection>
             <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -563,7 +589,7 @@ export default function Index() {
               </p>
             </div>
             <div className="text-center mt-8">
-              <button onClick={() => scrollTo("#contact")} className="btn-outline">
+              <button onClick={() => scrollTo("#services")} className="btn-outline">
                 Узнать подробнее
               </button>
             </div>
@@ -572,15 +598,16 @@ export default function Index() {
       </section>
 
       {/* PROCESS */}
-      <section id="process" className="py-24 md:py-32">
+      <section id="process" className="py-16 md:py-20">
         <div className="container mx-auto px-6 md:px-12 max-w-6xl">
-          <AnimatedSection className="text-center mb-16">
+          <AnimatedSection className="text-center mb-14">
             <div className="tag-rose mx-auto mb-6" style={{ display: "inline-flex" }}>Как проходит работа</div>
-            <h2 className="section-title">Мы работаем по-настоящему</h2>
+            <h2 className="section-title">Мы работаем по&#8209;настоящему</h2>
             <p className="section-subtitle mt-4 max-w-lg mx-auto">
               Не «упражнения для расслабления» и не «думайте позитивно». А то, как вы живёте на самом деле.
             </p>
             <p className="mt-4 text-sm max-w-2xl mx-auto leading-relaxed" style={{ color: "hsl(var(--muted-foreground))" }}>
+              Индивидуальная работа, еженедельные личные встречи онлайн / офлайн.
               Мы работаем не только с пониманием «в голове». Мы работаем с телом, с его памятью, с его реакциями.
               С тем, как вы живёте, чувствуете и выбираете себя — в реальной жизни.
               <br />
@@ -631,14 +658,14 @@ export default function Index() {
       {/* RESULTS */}
       <section
         id="results"
-        className="py-24 md:py-32"
+        className="py-16 md:py-20"
         style={{ background: "hsl(var(--sage-light))" }}
       >
         <div className="container mx-auto px-6 md:px-12 max-w-6xl">
           <AnimatedSection className="text-center mb-4">
             <div className="tag-sage mx-auto mb-6" style={{ display: "inline-flex" }}>Что меняется</div>
           </AnimatedSection>
-          <AnimatedSection className="text-center mb-12">
+          <AnimatedSection className="text-center mb-10">
             <p
               className="mx-auto max-w-xl"
               style={{
@@ -685,9 +712,9 @@ export default function Index() {
               ))}
             </div>
             <div className="text-center">
-              <button onClick={() => scrollTo("#contact")} className="btn-primary">
+              <a href={TG_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ textDecoration: "none" }}>
                 Хочу на сопровождение
-              </button>
+              </a>
             </div>
           </AnimatedSection>
         </div>
@@ -696,16 +723,13 @@ export default function Index() {
       {/* SERVICES */}
       <section
         id="services"
-        className="py-24 md:py-32"
+        className="py-16 md:py-20"
         style={{ background: "hsl(var(--muted))" }}
       >
         <div className="container mx-auto px-6 md:px-12 max-w-6xl">
-          <AnimatedSection className="text-center mb-16">
+          <AnimatedSection className="text-center mb-14">
             <div className="tag-sage mx-auto mb-6" style={{ display: "inline-flex" }}>Форматы сопровождения</div>
             <h2 className="section-title">Выберите свой путь</h2>
-            <p className="section-subtitle mt-4 max-w-lg mx-auto">
-              Индивидуальная работа, еженедельные личные встречи онлайн. Разбор ваших ситуаций — не абстрактных, а тех, что случились на этой неделе.
-            </p>
           </AnimatedSection>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -736,7 +760,7 @@ export default function Index() {
                           lineHeight: 1.2,
                         }}
                       >
-                        {s.title}
+                        {s.title} <span style={{ fontStyle: "italic" }}>{s.titleSub}</span>
                       </h3>
                       <p className="text-xs mt-0.5" style={{ color: "hsl(var(--muted-foreground))" }}>{s.subtitle}</p>
                     </div>
@@ -761,20 +785,21 @@ export default function Index() {
                     </div>
                   </div>
                   <div className="mt-auto pt-4 flex items-center justify-end" style={{ borderTop: "1px solid hsl(var(--border))" }}>
-                    <button
-                      onClick={() => scrollTo("#contact")}
+                    <a
+                      href={TG_LINK}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className={s.tag === "rose" ? "btn-primary" : "btn-outline"}
-                      style={{ padding: "0.5rem 1.25rem", fontSize: "0.8rem" }}
+                      style={{ padding: "0.5rem 1.25rem", fontSize: "0.8rem", textDecoration: "none" }}
                     >
                       {s.btn}
-                    </button>
+                    </a>
                   </div>
                 </div>
               </AnimatedSection>
             ))}
           </div>
 
-          {/* CTA under formats */}
           <AnimatedSection>
             <div
               className="rounded-3xl p-8 md:p-10 mt-10 text-center"
@@ -796,23 +821,23 @@ export default function Index() {
               <p className="text-sm mb-6" style={{ color: "hsl(var(--muted-foreground))" }}>
                 …значит, вам уже пора к себе.
               </p>
-              <button onClick={() => scrollTo("#contact")} className="btn-primary">
+              <a href={TG_LINK} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ textDecoration: "none" }}>
                 Хочу на сопровождение
-              </button>
+              </a>
             </div>
           </AnimatedSection>
         </div>
       </section>
 
       {/* AUTHOR */}
-      <section className="py-24 md:py-32" style={{ background: "hsl(38 40% 94%)" }}>
+      <section className="py-16 md:py-20" style={{ background: "hsl(38 40% 94%)" }}>
         <div className="container mx-auto px-6 md:px-12 max-w-4xl">
           <AnimatedSection>
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="tag-rose mb-6">Об авторе</div>
                 <h2 className="section-title mb-6">
-                  Ирина Пархоменко —<br />
+                  Ирина Пархоменко<br />
                   <em style={{ fontStyle: "italic" }}>психолог, психосоматолог</em>
                 </h2>
                 <p className="leading-relaxed mb-5" style={{ color: "hsl(var(--muted-foreground))", fontWeight: 300 }}>
@@ -877,9 +902,9 @@ export default function Index() {
       </section>
 
       {/* REVIEWS */}
-      <section id="reviews" className="py-24 md:py-32">
+      <section id="reviews" className="py-16 md:py-20">
         <div className="container mx-auto px-6 md:px-12 max-w-6xl">
-          <AnimatedSection className="text-center mb-16">
+          <AnimatedSection className="text-center mb-12">
             <div className="tag-rose mx-auto mb-6" style={{ display: "inline-flex" }}>Отзывы</div>
             <h2 className="section-title">Они уже выбрали себя</h2>
             <p className="section-subtitle mt-4">
@@ -887,7 +912,7 @@ export default function Index() {
             </p>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-5">
             {reviews.map((r) => (
               <AnimatedSection key={r.name}>
                 <div className="card-soft h-full flex flex-col">
@@ -900,7 +925,7 @@ export default function Index() {
                     className="flex-1 leading-relaxed mb-6"
                     style={{
                       fontFamily: "'Cormorant', serif",
-                      fontSize: "1.1rem",
+                      fontSize: "1.05rem",
                       fontStyle: "italic",
                       color: "hsl(var(--foreground))",
                       fontWeight: 400,
@@ -927,15 +952,15 @@ export default function Index() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="py-24 md:py-32" style={{ background: "hsl(var(--muted))" }}>
+      <section id="faq" className="py-16 md:py-20" style={{ background: "hsl(var(--muted))" }}>
         <div className="container mx-auto px-6 md:px-12 max-w-3xl">
-          <AnimatedSection className="text-center mb-12">
+          <AnimatedSection className="text-center mb-10">
             <div className="tag-sage mx-auto mb-6" style={{ display: "inline-flex" }}>Частые вопросы</div>
             <h2 className="section-title">То, о чём страшно спросить</h2>
           </AnimatedSection>
 
           <AnimatedSection>
-            <div className="flex flex-col gap-3 mb-12">
+            <div className="flex flex-col gap-3 mb-10">
               {faqs.map((f) => (
                 <FaqItem key={f.q} q={f.q} a={f.a} />
               ))}
@@ -960,9 +985,15 @@ export default function Index() {
               <p className="text-sm mb-6" style={{ color: "hsl(var(--muted-foreground))" }}>
                 Напишите мне. Тихим голосом, даже если стыдно. Я не осуждаю. Я была там, где вы.
               </p>
-              <button onClick={() => scrollTo("#contact")} className="btn-primary">
+              <a
+                href={TG_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+                style={{ textDecoration: "none" }}
+              >
                 Задать вопрос в личные сообщения
-              </button>
+              </a>
             </div>
           </AnimatedSection>
         </div>
@@ -971,7 +1002,7 @@ export default function Index() {
       {/* CONTACT */}
       <section
         id="contact"
-        className="py-24 md:py-32"
+        className="py-16 md:py-20"
         style={{ background: "hsl(var(--background))" }}
       >
         <div className="container mx-auto px-6 md:px-12 max-w-2xl">
@@ -1022,7 +1053,7 @@ export default function Index() {
 
               <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
                 <a
-                  href="https://t.me/irina151718"
+                  href={TG_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
@@ -1049,7 +1080,7 @@ export default function Index() {
                 </a>
 
                 <a
-                  href="https://max.ru/u/f9LHodD0cOIDJO7b3GsFDqo7AwyJ6K_ZfksSWOiFwxRekcOz8X-iY9E9bvQ"
+                  href={MAX_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
@@ -1099,9 +1130,13 @@ export default function Index() {
               fontFamily: "'Cormorant', serif",
               fontSize: "1.1rem",
               color: "hsl(var(--warm-dark))",
+              lineHeight: 1.4,
             }}
           >
-            Ирина Пархоменко, психолог · психосоматолог
+            <div>Ирина Пархоменко</div>
+            <div style={{ fontSize: "0.85rem", color: "hsl(var(--rose))", fontFamily: "'Golos Text', sans-serif", fontWeight: 400 }}>
+              психолог · психосоматолог
+            </div>
           </div>
           <div className="flex flex-wrap gap-6">
             {navLinks.map((l) => (
