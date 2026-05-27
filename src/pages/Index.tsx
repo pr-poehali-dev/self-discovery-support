@@ -226,27 +226,27 @@ export default function Index() {
     <div className="min-h-screen" style={{ background: "hsl(var(--background))" }}>
       {/* NAV */}
       <nav
-        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-8 py-3"
+        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-3"
         style={{ background: "hsl(30 20% 97% / 0.92)", backdropFilter: "blur(16px)", borderBottom: "1px solid hsl(var(--border))" }}
       >
         <a
           href="#"
-          className="font-light tracking-wide flex-shrink-0"
-          style={{ fontFamily: "'Cormorant', serif", fontSize: "1.1rem", color: "hsl(var(--warm-dark))" }}
+          className="flex-shrink-0"
+          style={{ fontFamily: "'Cormorant', serif", fontSize: "1.1rem", color: "hsl(var(--warm-dark))", textDecoration: "none", lineHeight: 1.4 }}
         >
-          <span className="flex flex-col leading-tight">
-            <span>Ирина Пархоменко</span>
-            <span style={{ color: "hsl(var(--rose))", fontFamily: "'Golos Text', sans-serif", fontSize: "0.7rem", fontWeight: 400 }}>психолог · психосоматолог</span>
-          </span>
+          <div>Ирина Пархоменко</div>
+          <div style={{ fontSize: "0.75rem", color: "hsl(var(--rose))", fontFamily: "'Golos Text', sans-serif", fontWeight: 400 }}>
+            психолог · психосоматолог
+          </div>
         </a>
 
-        <div className="hidden lg:flex items-center gap-3 xl:gap-5 mx-3">
+        <div className="hidden md:flex flex-wrap items-center justify-center gap-5">
           {navLinks.map((l) => (
             <button
               key={l.label}
               onClick={() => scrollTo(l.href)}
-              className="transition-colors duration-200 whitespace-nowrap"
-              style={{ fontSize: "0.78rem", color: "hsl(var(--muted-foreground))", fontFamily: "'Golos Text', sans-serif", background: "none", border: "none", cursor: "pointer" }}
+              className="text-xs transition-colors duration-200 whitespace-nowrap"
+              style={{ color: "hsl(var(--muted-foreground))", background: "none", border: "none", cursor: "pointer" }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "hsl(var(--rose-dark))")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "hsl(var(--muted-foreground))")}
             >
@@ -257,8 +257,8 @@ export default function Index() {
 
         <button
           onClick={() => scrollTo("#contact")}
-          className="btn-primary hidden lg:inline-flex"
-          style={{ padding: "0.4rem 1.1rem", fontSize: "0.8rem", flexShrink: 0 }}
+          className="btn-primary hidden md:inline-flex flex-shrink-0"
+          style={{ padding: "0.4rem 1.1rem", fontSize: "0.8rem" }}
         >
           Записаться
         </button>
