@@ -292,89 +292,87 @@ export default function Index() {
       {/* HERO */}
       <section
         id="hero"
-        className="relative min-h-screen flex items-center overflow-hidden"
-        style={{ paddingTop: "80px", background: "hsl(38 40% 94%)" }}
+        className="relative flex items-center overflow-hidden"
+        style={{ paddingTop: "72px", minHeight: "100vh", background: "hsl(38 40% 94%)" }}
       >
-        <div
-          className="absolute top-20 right-0 w-[40vw] h-[80vh] rounded-l-[80px] overflow-hidden hidden md:block"
-          style={{ background: "hsl(var(--sage-light))" }}
-        >
-          <img
-            src="https://cdn.poehali.dev/projects/d8ffcc0f-4381-4b97-b3bb-4962f16afd4d/files/acbf1112-ad9c-450f-b73c-780ef6017dd0.jpg"
-            alt="Лёгкость и безопасность в теле"
-            className="w-full h-full object-cover"
-            style={{ objectPosition: "center top" }}
-          />
-        </div>
-        <div
-          className="absolute top-16 right-[8vw] w-32 h-32 rounded-full animate-float"
-          style={{ background: "hsl(var(--rose-light))", opacity: 0.6 }}
-        />
-        <div
-          className="absolute bottom-32 right-[35vw] w-20 h-20 rounded-full animate-float delay-300"
-          style={{ background: "hsl(var(--sage))", opacity: 0.35 }}
-        />
+        <div className="container mx-auto px-6 md:px-12 max-w-6xl w-full">
+          <div className="grid md:grid-cols-2 gap-10 items-center py-12 md:py-16">
 
-        <div className="relative z-10 container mx-auto px-6 md:px-12 max-w-6xl">
-          <div className="w-full">
-            <div
-              className="inline-flex items-center gap-2 mb-8"
-              style={{ animation: "fadeUp 0.6s ease 0.1s both" }}
-            >
-              <span className="tag-sage">Индивидуальное сопровождение</span>
-            </div>
+            {/* LEFT — текст */}
+            <div>
+              <div
+                className="inline-flex items-center gap-2 mb-6"
+                style={{ animation: "fadeUp 0.6s ease 0.1s both" }}
+              >
+                <span className="tag-sage">Индивидуальное сопровождение</span>
+              </div>
 
-            <h1
-              style={{
-                fontFamily: "'Cormorant', serif",
-                fontSize: "clamp(1.9rem, 4.5vw, 3.8rem)",
-                fontWeight: 300,
-                lineHeight: 1.25,
-                color: "hsl(var(--warm-dark))",
-                letterSpacing: "-0.01em",
-                animation: "fadeUp 0.7s ease 0.2s both",
-              }}
-            >
-              Как женщинам, которые слишком долго терпят, молчат и сохраняют отношения ценой себя{" "}
-              <span style={{ fontSize: "0.7em", verticalAlign: "middle", color: "hsl(var(--muted-foreground))" }}>—</span>{" "}
-              <em style={{ fontStyle: "italic", color: "hsl(var(--rose-dark))" }}>вернуть лёгкость в теле, начать дышать полной грудью, перестать сжиматься рядом с мужчиной и снова ощутить радость к жизни</em>
-            </h1>
+              <h1
+                style={{
+                  fontFamily: "'Cormorant', serif",
+                  fontSize: "clamp(1.8rem, 3.5vw, 3.2rem)",
+                  fontWeight: 300,
+                  lineHeight: 1.3,
+                  color: "hsl(var(--warm-dark))",
+                  letterSpacing: "-0.01em",
+                  animation: "fadeUp 0.7s ease 0.2s both",
+                }}
+              >
+                Как женщинам, которые слишком долго терпят, молчат и сохраняют отношения ценой себя{" "}
+                <span style={{ fontSize: "0.7em", verticalAlign: "middle", color: "hsl(var(--muted-foreground))" }}>—</span>{" "}
+                <em style={{ fontStyle: "italic", color: "hsl(var(--rose-dark))" }}>вернуть лёгкость в теле, начать дышать полной грудью, перестать сжиматься рядом с мужчиной и снова ощутить радость к жизни</em>
+              </h1>
 
-            <div
-              className="flex flex-wrap gap-4 mt-10"
-              style={{ animation: "fadeUp 0.7s ease 0.5s both" }}
-            >
-              <button onClick={() => scrollTo("#contact")} className="btn-primary">
-                Хочу начать
-              </button>
-              <button onClick={() => scrollTo("#about")} className="btn-outline">
-                Узнать подробнее
-              </button>
-            </div>
+              <div
+                className="flex flex-wrap gap-4 mt-8"
+                style={{ animation: "fadeUp 0.7s ease 0.5s both" }}
+              >
+                <button onClick={() => scrollTo("#contact")} className="btn-primary">
+                  Хочу начать
+                </button>
+                <button onClick={() => scrollTo("#about")} className="btn-outline">
+                  Узнать подробнее
+                </button>
+              </div>
 
-            <div
-              className="flex gap-8 mt-12"
-              style={{ animation: "fadeUp 0.7s ease 0.65s both" }}
-            >
-              {[["с 2023", "в\u00a0психологии"], ["500+", "часов\nпрактики"], ["13+", "женщин"], ["100%", "индивидуально"]].map(([n, l]) => (
-                <div key={n}>
-                  <div
-                    style={{
-                      fontFamily: "'Cormorant', serif",
-                      fontSize: "1.7rem",
-                      fontWeight: 500,
-                      color: "hsl(var(--rose-dark))",
-                      lineHeight: 1,
-                    }}
-                  >
-                    {n}
+              <div
+                className="flex flex-wrap gap-6 mt-10"
+                style={{ animation: "fadeUp 0.7s ease 0.65s both" }}
+              >
+                {[["с 2023", "в\u00a0психологии"], ["500+", "часов\nпрактики"], ["13+", "женщин"], ["100%", "индивидуально"]].map(([n, l]) => (
+                  <div key={n}>
+                    <div
+                      style={{
+                        fontFamily: "'Cormorant', serif",
+                        fontSize: "1.7rem",
+                        fontWeight: 500,
+                        color: "hsl(var(--rose-dark))",
+                        lineHeight: 1,
+                      }}
+                    >
+                      {n}
+                    </div>
+                    <div className="text-xs mt-1" style={{ color: "hsl(var(--muted-foreground))", whiteSpace: "pre-line" }}>
+                      {l}
+                    </div>
                   </div>
-                  <div className="text-xs mt-1" style={{ color: "hsl(var(--muted-foreground))", whiteSpace: "pre-line" }}>
-                    {l}
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
+
+            {/* RIGHT — картинка */}
+            <div
+              className="rounded-3xl overflow-hidden hidden md:block"
+              style={{ aspectRatio: "3/4", background: "hsl(var(--sage-light))" }}
+            >
+              <img
+                src="https://cdn.poehali.dev/projects/d8ffcc0f-4381-4b97-b3bb-4962f16afd4d/files/acbf1112-ad9c-450f-b73c-780ef6017dd0.jpg"
+                alt="Лёгкость и безопасность в теле"
+                className="w-full h-full object-cover"
+                style={{ objectPosition: "center top" }}
+              />
+            </div>
+
           </div>
         </div>
       </section>
