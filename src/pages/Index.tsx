@@ -338,7 +338,7 @@ export default function Index() {
             >
               Как женщинам, которые слишком долго терпят, молчат и сохраняют отношения ценой себя{" "}
               <span style={{ fontSize: "0.7em", verticalAlign: "middle", color: "hsl(var(--muted-foreground))" }}>—</span>{" "}
-              <em style={{ fontStyle: "italic", color: "hsl(var(--rose-dark))" }}>вернуть лёгкость в теле, начать дышать полной грудью, перестать сжиматься рядом с{" "}<br />мужчиной и снова{" "}<br />ощутить радость к жизни</em>
+              <em style={{ fontStyle: "italic", color: "hsl(var(--rose-dark))" }}>вернуть лёгкость в теле, начать дышать полной грудью, перестать сжиматься рядом с мужчиной и снова ощутить радость к жизни</em>
             </h1>
 
             <div
