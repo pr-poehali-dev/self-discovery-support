@@ -316,7 +316,7 @@ export default function Index() {
         />
 
         <div className="relative z-10 container mx-auto px-6 md:px-12 max-w-6xl">
-          <div className="max-w-xl md:max-w-[50%]">
+          <div className="w-full">
             <div
               className="inline-flex items-center gap-2 mb-8"
               style={{ animation: "fadeUp 0.6s ease 0.1s both" }}
@@ -333,7 +333,6 @@ export default function Index() {
                 color: "hsl(var(--warm-dark))",
                 letterSpacing: "-0.01em",
                 animation: "fadeUp 0.7s ease 0.2s both",
-                maxWidth: "540px",
               }}
             >
               Как женщинам, которые слишком долго терпят, молчат и сохраняют отношения ценой себя{" "}
